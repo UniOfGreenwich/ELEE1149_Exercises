@@ -1,0 +1,1315 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Lab 14 - Software Engineering</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../Introduction.html">Introduction</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Workshops/Labs/Quizzes</li><li class="chapter-item expanded "><a href="../Lab_1/Lab_1.html"><strong aria-hidden="true">1.</strong> Lab 1</a></li><li class="chapter-item expanded "><a href="../Lab_2/Lab_2.html"><strong aria-hidden="true">2.</strong> Lab 2</a></li><li class="chapter-item expanded "><a href="../Lab_3/Lab_3.html"><strong aria-hidden="true">3.</strong> Lab 3</a></li><li class="chapter-item expanded "><a href="../Lab_4/Lab_4.html"><strong aria-hidden="true">4.</strong> Lab 4</a></li><li class="chapter-item expanded "><a href="../Lab_5/Lab_5.html"><strong aria-hidden="true">5.</strong> Lab 5</a></li><li class="chapter-item expanded "><a href="../Lab_6/Lab_6.html"><strong aria-hidden="true">6.</strong> Lab 6</a></li><li class="chapter-item expanded "><a href="../Lab_7/Lab_7.html"><strong aria-hidden="true">7.</strong> Lab 7</a></li><li class="chapter-item expanded "><a href="../Lab_8/Lab_8.html"><strong aria-hidden="true">8.</strong> Lab 8</a></li><li class="chapter-item expanded "><a href="../Lab_9/Lab_9.html"><strong aria-hidden="true">9.</strong> Lab 9</a></li><li class="chapter-item expanded "><a href="../Lab_10/Lab_10.html"><strong aria-hidden="true">10.</strong> Lab 10</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../UML-Interaction-Diagrams/UML-Interaction-Diagrams.html"><strong aria-hidden="true">10.1.</strong> UML - Interaction Diagrams</a></li><li class="chapter-item expanded "><a href="../UML-Class-Diagrams/UML-Class-Diagrams.html"><strong aria-hidden="true">10.2.</strong> UML - Class Diagrams</a></li><li class="chapter-item expanded "><a href="../UML-Case-Diagrams/UML-Case-Diagrams.html"><strong aria-hidden="true">10.3.</strong> UML - Case Diagrams</a></li></ol></li><li class="chapter-item expanded "><a href="../Lab_11/Lab_11.html"><strong aria-hidden="true">11.</strong> Lab 11</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../UML-Activity-Diagrams/UML-Activity-Diagrams.html"><strong aria-hidden="true">11.1.</strong> UML - Activity Diagrams</a></li><li class="chapter-item expanded "><a href="../UML-State-Diagrams/UML-State-Diagrams.html"><strong aria-hidden="true">11.2.</strong> UML - State Diagrams</a></li></ol></li><li class="chapter-item expanded "><a href="../Lab_12/Lab_12.html"><strong aria-hidden="true">12.</strong> Lab 12</a></li><li class="chapter-item expanded "><a href="../Lab_13/Lab_13.html"><strong aria-hidden="true">13.</strong> Lab 13</a></li><li class="chapter-item expanded "><a href="../Lab_14/Lab_14.html" class="active"><strong aria-hidden="true">14.</strong> Lab 14</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><li class="part-title">Git</li><li class="chapter-item expanded "><a href="../myFirstRepository/myFirstRepository.html"><strong aria-hidden="true">15.</strong> My First Repository</a></li><li class="chapter-item expanded "><a href="../BashAliases/BashAliases.html"><strong aria-hidden="true">16.</strong> Bash Aliases</a></li><li class="chapter-item expanded "><a href="../BranchingModel/BranchingModel.html"><strong aria-hidden="true">17.</strong> Branching-Strategy</a></li><li class="chapter-item expanded "><a href="../OneFlow/OneFlow.html"><strong aria-hidden="true">18.</strong> Git Oneflow</a></li><li class="chapter-item expanded "><a href="../AntiPatterns/AntiPatterns.html"><strong aria-hidden="true">19.</strong> Anti Patterns</a></li><li class="chapter-item expanded "><a href="../ContinousDeployment/ContinousDeployment.html"><strong aria-hidden="true">20.</strong> Continous Deployment</a></li><li class="chapter-item expanded "><a href="../ReleaseDeployment/ReleaseDeployment.html"><strong aria-hidden="true">21.</strong> Release Deployment</a></li><li class="chapter-item expanded "><a href="../Migration/Migration.html"><strong aria-hidden="true">22.</strong> Migration</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Software Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/cccu-uk/ELEE1149_Exercises" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/cccu-uk/ELEE1149_Exercises/edit/master/content/Lab_14/Lab_14.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="lab-14-oop-using-a-gui"><a class="header" href="#lab-14-oop-using-a-gui">Lab 14: OOP using a GUI</a></h1>
+<p>We are going to create a new C# Windows Platform Application give it the project name <code>BankingApp_Wpf</code>.</p>
+<h2 id="1-modifying-mainwindowxaml"><a class="header" href="#1-modifying-mainwindowxaml">1: Modifying MainWindow.xaml</a></h2>
+<ol>
+<li>The following MainWindow layout will be implemented: </li>
+</ol>
+<div align=center>
+<p><img src="./figures/step1-1.png" alt="" /></p>
+</div>
+<ol start="2">
+<li>
+<p>Firstly you need modify the <code>&lt;Window ..&gt;</code> tag so that the Title attribute says Banking System,  and the height and width are 500 and 600. </p>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Banking System&quot; Height=&quot;500&quot; Width=&quot;600&quot;&gt;
+</code></pre>
+</li>
+<li>
+<p>Next modify the Grid tag like the following so that you have a new background colour:</p>
+<pre><code class="language-xml">&lt;Grid Background=&quot;#F4F4F4&quot; Margin=&quot;0,0,0,-16&quot;&gt;
+</code></pre>
+</li>
+<li>
+<p>The Banking App will have dropdown box that will allow the user to select from a list of accounts. Using a <code>StackPanel</code>, which arranges child elements into a single line that can be oriented horizontally or vertically, add a Label and ComboBox like so:</p>
+<pre><code class="language-xml">&lt;Grid Background=&quot;#F4F4F4&quot; Margin=&quot;0,0,0,-16&quot;&gt;
+    &lt;StackPanel Margin=&quot;20,20,20,7&quot;&gt;
+        &lt;Label Content=&quot;Select Account:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+        &lt;ComboBox x:Name=&quot;accountComboBox&quot; Width=&quot;200&quot; Margin=&quot;0,5,0,15&quot; SelectionChanged=&quot;AccountComboBox_SelectionChanged&quot;/&gt;
+</code></pre>
+<div align=center>
+<p><img src="./figures/step1.png" alt="" /></p>
+</div>
+</li>
+<li>
+<p>Following on from this we will need to create a separation using a border for the next section of this form, which will be the account information.</p>
+<pre><code class="language-xml">&lt;Border BorderBrush=&quot;#CCCCCC&quot; BorderThickness=&quot;0,0,0,1&quot; Padding=&quot;0,0,0,10&quot;&gt;
+                &lt;TextBlock Text=&quot;Account Information&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+            &lt;/Border&gt;
+</code></pre>
+<div align=center>
+<p><img src="./figures/step2.png" alt="" /></p>
+<div>
+</li>
+<li>
+<p>Now we need to create a new <code>StackPanel</code> to house our <strong>Account Number</strong>, <strong>First</strong> &amp; <strong>Last name</strong>, and <strong>account balanace</strong>:</p>
+<pre><code class="language-xml">&lt;StackPanel Margin=&quot;0,0,0,15&quot;&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+        &lt;Label Content=&quot;Account Number:&quot;/&gt;
+        &lt;Label x:Name=&quot;accountNumberLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+        &lt;Label Content=&quot;First Name:&quot;/&gt;
+        &lt;Label x:Name=&quot;firstNameLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+        &lt;Label Content=&quot;Last Name:&quot;/&gt;
+        &lt;Label x:Name=&quot;lastNameLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+    &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+        &lt;Label Content=&quot;Balance:&quot;/&gt;
+        &lt;Label x:Name=&quot;balanceLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+    &lt;/StackPanel&gt;
+&lt;/StackPanel&gt;
+</code></pre>
+<div align=center>
+<p><img src="./figures/step3.png" alt="" /></p>
+<div>
+</li>
+<li>
+<p>Penultimately, some control buttons need to be added so the user can interact with accounts:</p>
+<pre><code class="language-xml">&lt;Border BorderBrush=&quot;#CCCCCC&quot; BorderThickness=&quot;0,0,0,1&quot; Padding=&quot;0,0,0,10&quot;&gt;
+                &lt;TextBlock Text=&quot;Selected Account Details:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+            &lt;/Border&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;Button Content=&quot;Create Account&quot; Width=&quot;150&quot; Click=&quot;CreateAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;View Balance&quot; Width=&quot;150&quot; Click=&quot;ViewBalanceButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Modify Account&quot; Width=&quot;150&quot; Click=&quot;ModifyAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; Margin=&quot;0,10,0,0&quot;&gt;
+                &lt;Button Content=&quot;Deposit&quot; Width=&quot;150&quot; Click=&quot;DepositButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Withdraw&quot; Width=&quot;150&quot; Click=&quot;WithdrawButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Delete Account&quot; Width=&quot;150&quot; Click=&quot;DeleteAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+            &lt;/StackPanel&gt;        
+</code></pre>
+</li>
+</ol>
+<p><strong>Output:</strong></p>
+<div align=center>
+<p><img src="./figures/MainWindowComplete.png" alt="" /></p>
+</div>
+<ol start="8">
+<li>
+<p>Lastly, add a <code>TextBlock</code> for verbose feedback to the user:</p>
+<pre><code class="language-xml">&lt;TextBlock x:Name=&quot;resultTextBlock&quot; TextWrapping=&quot;Wrap&quot; Height=&quot;34&quot; RenderTransformOrigin=&quot;0.5,0.5&quot; Width=&quot;548&quot;&gt;
+            &lt;/TextBlock&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</li>
+</ol>
+<details>
+<summary>Show Full Code...</summary>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Banking System&quot; Height=&quot;500&quot; Width=&quot;600&quot;&gt;
+    &lt;Grid Background=&quot;#F4F4F4&quot; Margin=&quot;0,0,0,-16&quot;&gt;
+        &lt;StackPanel Margin=&quot;20,20,20,7&quot;&gt;
+            &lt;Label Content=&quot;Select Account:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;ComboBox x:Name=&quot;accountComboBox&quot; Width=&quot;200&quot; Margin=&quot;0,5,0,15&quot; SelectionChanged=&quot;AccountComboBox_SelectionChanged&quot;/&gt;
+
+            &lt;Border BorderBrush=&quot;#CCCCCC&quot; BorderThickness=&quot;0,0,0,1&quot; Padding=&quot;0,0,0,10&quot;&gt;
+                &lt;TextBlock Text=&quot;Account Information&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+            &lt;/Border&gt;
+
+            &lt;StackPanel Margin=&quot;0,0,0,15&quot;&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+                    &lt;Label Content=&quot;Account Number:&quot;/&gt;
+                    &lt;Label x:Name=&quot;accountNumberLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+                    &lt;Label Content=&quot;First Name:&quot;/&gt;
+                    &lt;Label x:Name=&quot;firstNameLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+                    &lt;Label Content=&quot;Last Name:&quot;/&gt;
+                    &lt;Label x:Name=&quot;lastNameLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+                &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,5&quot;&gt;
+                    &lt;Label Content=&quot;Balance:&quot;/&gt;
+                    &lt;Label x:Name=&quot;balanceLabel&quot; Width=&quot;200&quot; Margin=&quot;10,0,0,0&quot;/&gt;
+                &lt;/StackPanel&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;Border BorderBrush=&quot;#CCCCCC&quot; BorderThickness=&quot;0,0,0,1&quot; Padding=&quot;0,0,0,10&quot;&gt;
+                &lt;TextBlock Text=&quot;Selected Account Details:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+            &lt;/Border&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
+                &lt;Button Content=&quot;Create Account&quot; Width=&quot;150&quot; Click=&quot;CreateAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;View Balance&quot; Width=&quot;150&quot; Click=&quot;ViewBalanceButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Modify Account&quot; Width=&quot;150&quot; Click=&quot;ModifyAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot; Margin=&quot;0,10,0,0&quot;&gt;
+                &lt;Button Content=&quot;Deposit&quot; Width=&quot;150&quot; Click=&quot;DepositButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Withdraw&quot; Width=&quot;150&quot; Click=&quot;WithdrawButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+                &lt;Button Content=&quot;Delete Account&quot; Width=&quot;150&quot; Click=&quot;DeleteAccountButton_Click&quot; Margin=&quot;0,0,10,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+            &lt;TextBlock x:Name=&quot;resultTextBlock&quot; TextWrapping=&quot;Wrap&quot; Height=&quot;34&quot; RenderTransformOrigin=&quot;0.5,0.5&quot; Width=&quot;548&quot;&gt;
+            &lt;/TextBlock&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</details>
+<blockquote>
+<p><strong>Note:</strong>
+&gt;We will revist the <code>MainWindow.xaml.cs</code> later as we need to setup a <strong>base</strong> class and <strong>derived</strong> classes</p>
+</blockquote>
+<h2 id="n-creating-the-account-abstract-class"><a class="header" href="#n-creating-the-account-abstract-class">n: Creating the Account <code>abstract</code> class:</a></h2>
+<p>An <code>abstract</code> class is a class in object-oriented programming that cannot be instantiated on its own and is meant to be <strong>subclassed</strong> by other classes. It often contains abstract methods, which are methods without a body, intended to be implemented by the subclasses. Abstract classes can also have regular methods with an implementation.</p>
+<ol start="9">
+<li>Add a new <code>Windows Presentation Foundation window</code> by doing the following:</li>
+</ol>
+<p><img src="./figures/NewClass_default.gif" alt="" /></p>
+<ol start="10">
+<li>
+<p>In the code below, the <code>Account</code> class is declared as an <code>abstract</code> class. Reproduce: </p>
+<details>
+<summary>Show Code:</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Represents an abstract class for various types of accounts in a banking system.
+/// &lt;/summary&gt;
+public abstract class Account
+{
+    /// &lt;summary&gt;
+    /// Gets or sets the account number.
+    /// &lt;/summary&gt;
+    public int AccountNumber { get; set; }
+
+    /// &lt;summary&gt;
+    /// Gets or sets the first name of the account holder.
+    /// &lt;/summary&gt;
+    public string FirstName { get; set; }
+
+    /// &lt;summary&gt;
+    /// Gets or sets the last name of the account holder.
+    /// &lt;/summary&gt;
+    public string LastName { get; set; }
+
+    /// &lt;summary&gt;
+    /// Gets or sets the balance of the account.
+    /// &lt;/summary&gt;
+    protected double Balance { get; set; }
+
+    /// &lt;summary&gt;
+    /// Creates a new account with the specified details.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;accountNumber&quot;&gt;The account number.&lt;/param&gt;
+    /// &lt;param name=&quot;firstName&quot;&gt;The first name of the account holder.&lt;/param&gt;
+    /// &lt;param name=&quot;lastName&quot;&gt;The last name of the account holder.&lt;/param&gt;
+    public Account(int accountNumber, string firstName, string lastName)
+    {
+        AccountNumber = accountNumber;
+        FirstName = firstName;
+        LastName = lastName;
+        Balance = 0;
+    }
+
+    /// &lt;summary&gt;
+    /// Deposits the specified amount into the account.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;amount&quot;&gt;The amount to be deposited.&lt;/param&gt;
+    public abstract void Deposit(double amount);
+
+    /// &lt;summary&gt;
+    /// Withdraws the specified amount from the account.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;amount&quot;&gt;The amount to be withdrawn.&lt;/param&gt;
+    public abstract void Withdraw(double amount);
+
+    /// &lt;summary&gt;
+    /// Displays the current balance of the account.
+    /// &lt;/summary&gt;
+    public abstract void DisplayBalance();
+
+    /// &lt;summary&gt;
+    /// Modifies the account details.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;firstName&quot;&gt;The new first name of the account holder.&lt;/param&gt;
+    /// &lt;param name=&quot;lastName&quot;&gt;The new last name of the account holder.&lt;/param&gt;
+    public void ModifyAccount(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+    }
+
+    /// &lt;summary&gt;
+    /// Deletes the account.
+    /// &lt;/summary&gt;
+    public void DeleteAccount()
+    {
+        // Additional logic for account deletion, if needed
+        Console.WriteLine($&quot;Account {AccountNumber} deleted.&quot;);
+    }
+}
+</code></pre>
+</details>
+</li>
+</ol>
+<ul>
+<li>
+<p>Let's break down its key aspects,:</p>
+<ul>
+<li>
+<p><code>Deposit</code>, <code>Withdraw</code>, and <code>DisplayBalance</code> are abstract methods.</p>
+</li>
+<li>
+<p>They are declared in the abstract class but lack an implementation (i.e., no method body). Subclasses (like <code>SavingsAccount</code> and <code>CurrentAccount</code>) must provide concrete implementations for these methods.</p>
+</li>
+<li>
+<p>The <code>&lt;summary&gt;</code> tags provide a brief description of the purpose of the class and each method.</p>
+</li>
+<li>
+<p>The <code>&lt;param&gt;</code> tags describe the parameters of each method, specifying what each parameter represents.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>These comments follow the XML documentation format, which is commonly used in C# to provide inline documentation. This format supports tools like IntelliSense to display information about classes and methods as developers use them.</p>
+<blockquote>
+<p><strong>Summary:</strong></p>
+<blockquote>
+<p>The concept of abstraction is highlighted by the fact that the Account class provides a high-level interface for various types of accounts without specifying the exact details of how depositing, withdrawing, or displaying balance is done. The details are left to the subclasses to define.</p>
+</blockquote>
+</blockquote>
+</li>
+</ul>
+<h2 id="2-creating-the-savingsaccount-and-currentaccount--through-inheritance-of-account-class-abstract-class"><a class="header" href="#2-creating-the-savingsaccount-and-currentaccount--through-inheritance-of-account-class-abstract-class">2: Creating the <code>SavingsAccount</code> and <code>CurrentAccount</code>  through inheritance of Account class <code>abstract</code> class:</a></h2>
+<ol start="11">
+<li>You now need to add two new classes one called, <code>SavingsAccount</code> and the other <code>CurrentAccount</code>, like you did before</li>
+</ol>
+<ul>
+<li>
+<p>The <code>SavingsAccount</code> and <code>CurrentAccount</code> classes <strong>inherit</strong> from the <code>Account</code> class. By doing so, they are obligated to implement the abstract methods defined in the <code>Account</code> class:</p>
+</li>
+<li>
+<p><code>Deposit()</code></p>
+</li>
+<li>
+<p><code>Withdraw()</code></p>
+</li>
+<li>
+<p><code>DisplayBalance()</code></p>
+</li>
+</ul>
+<ol start="12">
+<li>
+<p>Open the <code>SavingsAccounts.cs</code> file and reproduce the following:</p>
+<details>
+<summary>Code here:</summary>
+<pre><code class="language-csharp"> public class SavingsAccount : Account
+{
+    // Constructor
+    public SavingsAccount(int accountNumber, string firstName, string lastName, double balance)
+        : base(accountNumber, firstName, lastName){
+    }
+
+    // Implement abstract methods
+    public override void Deposit(double amount)
+    {
+        // Implement deposit logic
+        Balance += amount;
+    }
+
+    public override void Withdraw(double amount)
+    {
+        // Implement withdrawal logic
+        if (Balance &gt;= amount)
+        {
+            Balance -= amount;
+        }
+        else
+        {
+            Console.WriteLine(&quot;Insufficient funds for withdrawal.&quot;);
+        }
+    }
+
+    public override double GetBalance()
+    {
+        return Balance;
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Open the <code>CurrentAccounts.cs</code> file and reproduce the following:</p>
+<details>
+<summary>Code here:</summary>
+<pre><code class="language-csharp">public class CurrentAccount : Account
+{
+    // Constructor
+    public CurrentAccount(int accountNumber, string firstName, string lastName, double balance)
+        : base(accountNumber, firstName, lastName){
+    }
+
+    // Implement abstract methods
+    public override void Deposit(double amount)
+    {
+        // Implement deposit logic for current account
+        Balance += amount;
+    }
+
+    public override void Withdraw(double amount)
+    {
+        // Implement withdrawal logic for current account
+        if (Balance &gt;= amount)
+        {
+            Balance -= amount;
+        }
+        else
+        {
+            Console.WriteLine(&quot;Insufficient funds for withdrawal.&quot;);
+        }
+    }
+
+    public override double GetBalance()
+    {
+        return Balance;
+    }
+}
+</code></pre>
+</details>
+</li>
+</ol>
+<ul>
+<li>
+<p>Code that uses the <code>Account</code> class can work with any <strong>derived</strong> class (e.g., <code>SavingsAccount</code> or <code>CurrentAccount</code>) without knowing the specific details of each account type. This is an example of <strong>polymorphism</strong>, where different types of objects (subclasses) can be treated as instances of the base class.</p>
+</li>
+<li>
+<p>The <strong>properties</strong> <code>AccountNumber</code>, <code>FirstName</code>, and <code>LastName</code> are directly accessible in these <strong>derived</strong> classes, allowing you to use the account information in the implementation.</p>
+</li>
+</ul>
+<blockquote>
+<p><strong>Summary:</strong></p>
+<blockquote>
+<ul>
+<li>
+<p><strong>Abstract</strong> classes can define a contract that their subclasses must follow. In this case, any class representing an account must implement the methods specified in the <code>Account</code> class.</p>
+</li>
+<li>
+<p>By using an abstract class, you provide a common structure and interface for different types of accounts, allowing for code reusability and making it easier to extend the system with new account types in the future.</p>
+</li>
+<li>
+<p>Now, when you create instances of <code>SavingsAccount</code> or <code>CurrentAccount</code>, you can set and retrieve the account details through the properties inherited from the <code>Account</code> base class.</p>
+</li>
+</ul>
+</blockquote>
+</blockquote>
+<h2 id="3-creating-the-createaccount-modifywindow-depositwindow-and-withdrawwindow-classes"><a class="header" href="#3-creating-the-createaccount-modifywindow-depositwindow-and-withdrawwindow-classes">3: Creating the <code>CreateAccount</code>, <code>ModifyWindow</code>, <code>DepositWindow</code>, and <code>WithdrawWindow</code> classes:</a></h2>
+<ol start="14">
+<li>You need to create the following <code>Windows Presentation Foundation window</code>, this generates two files the <code>filename.xaml</code> and a child file <code>filename.xaml.cs</code>:</li>
+</ol>
+<ul>
+<li>Make the following <code>CreateAccount</code>, <code>ModifyWindow</code>, <code>DepositWindow</code>, and <code>WithdrawWindow</code></li>
+</ul>
+<p><img src="./figures/WindowsPresentationFoundation-window.gif" alt="" /></p>
+<ol start="15">
+<li>Once that is done, modify the <code>CreateAccount.xaml</code>. </li>
+</ol>
+<ul>
+<li>
+<p>Using the elements <code>Grid</code>, <code>StackPanel</code>, <code>Label</code>, <code>Texbox</code>, <code>Button</code> the following will be created:</p>
+<ul>
+<li>Account Number</li>
+<li>FirstName</li>
+<li>Last Name</li>
+<li>Initial Balance</li>
+<li>Account Type Radio buttons:
+<ul>
+<li>Saving Account</li>
+<li>Current Account</li>
+</ul>
+</li>
+<li>A submit button</li>
+</ul>
+<details>
+ <summary>Code here...</summary>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.CreateAccount&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Create Account&quot; Height=&quot;423&quot; Width=&quot;400&quot;&gt;
+    &lt;Grid Background=&quot;#F4F4F4&quot; Margin=&quot;0,0,0,-16&quot;&gt;
+        &lt;StackPanel Margin=&quot;20&quot;&gt;
+            &lt;Label Content=&quot;Account Number:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;accountNumberTextBox&quot; Width=&quot;250&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Label Content=&quot;First Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;firstNameTextBox&quot; Width=&quot;250&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Label Content=&quot;Last Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;lastNameTextBox&quot; Width=&quot;250&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Label Content=&quot;Initial Balance:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;initialBalanceTextBox&quot; Width=&quot;250&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Border BorderBrush=&quot;#CCCCCC&quot; BorderThickness=&quot;0,0,0,1&quot; Padding=&quot;0,0,0,10&quot; Height=&quot;29&quot;&gt;
+                &lt;TextBlock Text=&quot;Account Type&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;16&quot;/&gt;
+            &lt;/Border&gt;
+
+            &lt;StackPanel Margin=&quot;0,5,0,10&quot;&gt;
+                &lt;RadioButton x:Name=&quot;savingsRadioButton&quot; Content=&quot;Savings Account&quot; IsChecked=&quot;True&quot;/&gt;
+                &lt;RadioButton x:Name=&quot;currentRadioButton&quot; Content=&quot;Current Account&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;Button Content=&quot;Create Account&quot; Width=&quot;150&quot; Height=&quot;30&quot; Click=&quot;CreateAccountButton_Click&quot; Margin=&quot;0,10,0,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</details>
+<div align=center>
+<p><img src="./figures/step7.png" alt="" /></p>
+</div>
+</li>
+</ul>
+<ol start="16">
+<li>
+<p>Once that is done, you can wirte the C# program for <code>CreateAccount.xaml.cs</code>. </p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Interaction logic for CreateAccount.xaml
+/// &lt;/summary&gt;
+public partial class CreateAccount : Window
+{
+    public List&lt;int&gt; AccountNumbers { get; set; }
+    public bool IsSavingsAccount { get; private set; }
+
+    public CreateAccount()
+    {
+        InitializeComponent();
+    }
+
+    private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
+    {
+        int newAccountNumber;
+        if (!int.TryParse(accountNumberTextBox.Text, out newAccountNumber))
+        {
+            MessageBox.Show(&quot;Invalid account number. Please enter a valid integer.&quot;);
+            return;
+        }
+
+        if (AccountNumbers.Contains(newAccountNumber))
+        {
+            MessageBox.Show(&quot;Account number already exists. Please choose a different account number.&quot;);
+            return;
+        }
+
+        // Set IsSavingsAccount based on radio button selection
+        IsSavingsAccount = savingsRadioButton.IsChecked ?? false;
+
+        DialogResult = true; // Set DialogResult to true to indicate successful account creation
+        Close();
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Once that is done, modify the <code>DepositWindow.xaml</code>. </p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Using the elements <code>Grid</code>, <code>StackPanel</code>, <code>Label</code>, <code>Texbox</code>, <code>Button</code> the following will be created:</p>
+<ul>
+<li>Deposit Title</li>
+<li>Input box</li>
+<li>A submit button</li>
+</ul>
+<details>
+ <summary>Code here...</summary>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.DepositWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Deposit Window&quot; Height=&quot;155&quot; Width=&quot;300&quot;&gt;
+    &lt;Grid Background=&quot;#F4F4F4&quot; Margin=&quot;0,0,0,-16&quot;&gt;
+        &lt;StackPanel Margin=&quot;20&quot;&gt;
+            &lt;Label Content=&quot;Deposit Amount:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;depositAmountTextBox&quot; Width=&quot;150&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Button Content=&quot;Deposit&quot; Width=&quot;100&quot; Height=&quot;30&quot; Click=&quot;DepositButton_Click&quot; Margin=&quot;0,10,0,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</details>
+<div align=center>
+<p><img src="./figures/step8.PNG" alt="" /></p>
+</div>
+</li>
+</ul>
+<ol start="18">
+<li>
+<p>Once that is done, you can wirte the C# program for <code>DepositWindow.xaml.cs</code>.</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">public partial class DepositWindow : Window
+{
+    public double DepositAmount { get; private set; }
+
+    public DepositWindow()
+    {
+        InitializeComponent();
+
+        
+    }
+
+    private void DepositButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (double.TryParse(depositAmountTextBox.Text, out double amount))
+        {
+            DepositAmount = amount;
+            DialogResult = true; // Set DialogResult to true to indicate successful deposit
+            Close();
+        }
+        else
+        {
+            MessageBox.Show(&quot;Invalid amount. Please enter a valid number.&quot;);
+        }
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Once that is done, modify the <code>WithdrawWindow.xaml</code>.</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Using the elements <code>Grid</code>, <code>StackPanel</code>, <code>Label</code>, <code>Texbox</code>, <code>Button</code> the following will be created:</p>
+<ul>
+<li>Current Balance Label </li>
+<li>Balance Labe</li>
+<li>Withdraw Amount Label and Input box</li>
+<li>A submit button</li>
+</ul>
+<details>
+ <summary>Code here...</summary>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.WithdrawWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Withdraw Window&quot; Height=&quot;222&quot; Width=&quot;300&quot;&gt;
+    &lt;Grid Background=&quot;#F4F4F4&quot;&gt;
+        &lt;StackPanel Margin=&quot;20&quot;&gt;
+            &lt;Label Content=&quot;Current Balance:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;Label x:Name=&quot;currentBalanceLabel&quot; Width=&quot;150&quot; Margin=&quot;0,5,0,10&quot;/&gt;
+
+            &lt;Label Content=&quot;Withdraw Amount:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+            &lt;TextBox x:Name=&quot;withdrawAmountTextBox&quot; Width=&quot;150&quot; Margin=&quot;0,0,0,10&quot;/&gt;
+
+            &lt;Button Content=&quot;Withdraw&quot; Width=&quot;100&quot; Height=&quot;30&quot; Click=&quot;WithdrawButton_Click&quot; Margin=&quot;0,10,0,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</details>
+<div align=center>
+<p><img src="./figures/step9.png" alt="" /></p>
+</div>
+</li>
+</ul>
+<ol start="20">
+<li>
+<p>Once that is done, you can wirte the C# program for <code>WithdrawWindow.cs</code>.</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">public partial class WithdrawWindow : Window
+{
+    public double WithdrawAmount { get; private set; }
+
+    public WithdrawWindow(double currentBalance)
+    {
+        InitializeComponent();
+        currentBalanceLabel.Content = $&quot;{currentBalance}&quot;;
+    
+    }
+
+    private void WithdrawButton_Click(object sender, RoutedEventArgs e)
+    {
+        if (double.TryParse(withdrawAmountTextBox.Text, out double amount))
+        {
+            WithdrawAmount = amount;
+            DialogResult = true; // Set DialogResult to true to indicate successful withdrawal
+            Close();
+        }
+        else
+        {
+            MessageBox.Show(&quot;Invalid amount. Please enter a valid number.&quot;);
+        }
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Once that is done, modify the <code>ModifyWindow.xaml</code>.</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>Using the elements <code>Grid</code>, <code>StackPanel</code>, <code>Label</code>, <code>Texbox</code>, <code>Button</code> the following will be created:</p>
+<ul>
+<li>Current First and Last Name labels</li>
+<li>New First and Last Name labels and inputs</li>
+<li>A submit button</li>
+</ul>
+<details>
+  <summary>Code here...</summary>
+<pre><code class="language-xml">&lt;Window x:Class=&quot;BankingApp_Wpf.ModifyWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        Title=&quot;Modify Account&quot; Height=&quot;298&quot; Width=&quot;400&quot;&gt;
+    &lt;Grid Background=&quot;#F4F4F4&quot;&gt;
+        &lt;StackPanel Margin=&quot;20&quot;&gt;
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,10&quot;&gt;
+                &lt;Label Content=&quot;Current First Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+                &lt;Label x:Name=&quot;currentFirstNameLabel&quot; Width=&quot;150&quot; Margin=&quot;0,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,10&quot;&gt;
+                &lt;Label Content=&quot;Current Last Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+                &lt;Label x:Name=&quot;currentLastNameLabel&quot; Width=&quot;150&quot; Margin=&quot;0,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;Separator Margin=&quot;0,10,0,10&quot; HorizontalAlignment=&quot;Stretch&quot; VerticalAlignment=&quot;Center&quot;/&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,10&quot;&gt;
+                &lt;Label Content=&quot;New First Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+                &lt;TextBox x:Name=&quot;newFirstNameTextBox&quot; Width=&quot;150&quot; Margin=&quot;0,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;StackPanel Orientation=&quot;Horizontal&quot; Margin=&quot;0,0,0,20&quot;&gt;
+                &lt;Label Content=&quot;New Last Name:&quot; FontWeight=&quot;Bold&quot; FontSize=&quot;14&quot;/&gt;
+                &lt;TextBox x:Name=&quot;newLastNameTextBox&quot; Width=&quot;150&quot; Margin=&quot;0,0,0,0&quot;/&gt;
+            &lt;/StackPanel&gt;
+
+            &lt;Button Content=&quot;Modify&quot; Width=&quot;100&quot; Height=&quot;30&quot; Click=&quot;ModifyButton_Click&quot; Margin=&quot;0,10,0,0&quot;/&gt;
+        &lt;/StackPanel&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre>
+</details>
+<div align=center>
+<p><img src="./figures/step10.png" alt="" /></p>
+</div>
+</li>
+</ul>
+<ol start="22">
+<li>
+<p>Once that is done, you can wirte the C# program for <code>ModifyWindow.cs</code>.</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">public partial class ModifyWindow : Window
+{
+    public string NewFirstName { get; private set; }
+    public string NewLastName { get; private set; }
+
+    public ModifyWindow(string fn, string ln)
+    {
+        InitializeComponent();
+        currentFirstNameLabel.Content = fn;
+        currentLastNameLabel.Content = ln;
+    }
+
+    private void ModifyButton_Click(object sender, RoutedEventArgs e)
+    {
+        NewFirstName = newFirstNameTextBox.Text;
+        NewLastName = newLastNameTextBox.Text;
+
+        if (!string.IsNullOrWhiteSpace(NewFirstName) &amp;&amp; !string.IsNullOrWhiteSpace(NewLastName))
+        {
+            DialogResult = true; // Set DialogResult to true to indicate successful modification
+            Close();
+        }
+        else
+        {
+            MessageBox.Show(&quot;Both First Name and Last Name must be provided.&quot;);
+        }
+    }
+}
+</code></pre>
+</details>
+</li>
+</ol>
+<h2 id="3-building-the-mainwindowxamlcs-class"><a class="header" href="#3-building-the-mainwindowxamlcs-class">3: Building the <code>MainWindow.xaml.cs</code> class:</a></h2>
+<p>In this section the functionality of the <code>MainWindow.xaml.cs</code> will be implemented. </p>
+<p>Recall the <code>MainWindow.xaml</code> file where the implemenation of interactive element such as a <code>ComboBox</code> or a <code>Button</code>, part of the the tag included the attribute<code> SelectionChanged</code> or <code>Click</code>:</p>
+<pre><code class="language-xml">...
+&lt;ComboBox x:Name=&quot;accountComboBox&quot; Width=&quot;200&quot; Margin=&quot;0,5,0,15&quot; SelectionChanged=&quot;AccountComboBox_SelectionChanged&quot;/&gt;
+...
+&lt;Button Content=&quot;Create Account&quot; ... Click=&quot;CreateAccountButton_Click&quot; .../&gt;
+&lt;Button Content=&quot;View Balance&quot; ...  Click=&quot;ViewBalanceButton_Click&quot; .../&gt;
+&lt;Button Content=&quot;Modify Account&quot; ... Click=&quot;ModifyAccountButton_Click&quot; .../&gt;
+...
+&lt;Button Content=&quot;Deposit&quot; ... Click=&quot;DepositButton_Click&quot; .../&gt;
+&lt;Button Content=&quot;Withdraw&quot; ... Click=&quot;WithdrawButton_Click&quot; .../&gt;
+&lt;Button Content=&quot;Delete Account&quot; ... Click=&quot;DeleteAccountButton_Click&quot; .../&gt;
+...
+</code></pre>
+<ol start="23">
+<li>
+<p>We will start with the Account <code>ComboBox</code> and initialise and decalaration of the <code>Account</code> class:</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">private List&lt;Account?&gt; accounts = new(); // List of accounts
+private Account? account; // nullable account
+
+public MainWindow()
+{
+    InitializeComponent();
+}
+
+/// &lt;summary&gt;
+/// Function that updates the ComboBox with the Accounts
+/// &lt;/summary&gt;
+private void UpdateAccountComboBox()
+{
+    /* Update the ComboBox with account numbers
+    * here acc, is a lambda expression you could replace this with anyword but 
+    it makes sense to name it something meaningful.
+    */
+    accountComboBox.ItemsSource = accounts.Select(acc =&gt; acc.AccountNumber).ToList();
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Continuing we need a function that references <code>xaml</code>, <code>SelectionChanged=&quot;AccountComboBox_SelectionChanged&quot;</code>, naming the new <code>private</code> function called <code>AccountComboBox_SelectionChanged</code>:</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// - Function that is called on the the selection is changed
+/// - the selected account is captured and then the UpdateDetailsLabel is invoked
+/// &lt;/summary&gt;
+private void AccountComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+{
+    // Change the currently selected account based on ComboBox selection
+    if (accountComboBox.SelectedItem != null)
+    {
+        // againe we use the lambda expersion to select the account from the combobox and compare it against the list of known accounts
+        int selectedAccountNumber = (int)accountComboBox.SelectedItem;
+        account = accounts.FirstOrDefault(acc =&gt; acc.AccountNumber == selectedAccountNumber);
+        // invocation of updateDetailsLabel
+        UpdateDetailsLabel();
+    }
+}
+
+</code></pre>
+</details>
+</li>
+<li>
+<p>Of course there is an error in the last function because the <code>UpdateDetailsLabel()</code> does not exist.</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Function that updates the Selects the chosen account and invokes the UpdateDetailsLabel method
+/// &lt;/summary&gt;
+private void UpdateDetailsLabel()
+{
+    // Update the details label with the current account information
+    if (account != null)
+    {
+        firstNameLabel.Content = $&quot;{account.FirstName}&quot;;
+        lastNameLabel.Content = $&quot;{account.LastName}&quot;;
+        accountNumberLabel.Content = $&quot;{account.AccountNumber}&quot;;
+        balanceLabel.Content = $&quot;{account.GetBalance()}&quot;;
+    }
+    else
+    {
+        detailsTextBlock.Text = &quot;No account selected.&quot;;
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Now we can make some accounts manually by implementing the <code>CreateAccountButton_Click</code> which will call the CreateAccount.xaml (Window). The functionality will also include selection of <code>SavingAccount</code> and <code>CurrentAccount</code>:</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Invokes the CreateAccount GUI and enables users to create new accounts
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void CreateAccountButton_Click(object sender, RoutedEventArgs e)
+{
+    // Open the CreateAccount window
+    CreateAccount createAccountWindow = new CreateAccount();
+    createAccountWindow.Owner = this;
+
+    // Populate the ComboBox in CreateAccount window with account numbers
+    createAccountWindow.AccountNumbers = accounts.Select(acc =&gt; acc.AccountNumber).ToList();
+
+    // Invoke the CreateAccount GUI
+    createAccountWindow.ShowDialog();
+
+    if (createAccountWindow.DialogResult == true)
+    {
+        // Check for duplicate account numbers
+        int newAccountNumber = int.Parse(createAccountWindow.accountNumberTextBox.Text);
+
+        //Check to see if Account number already exists
+        if (accounts.Any(acc =&gt; acc.AccountNumber == newAccountNumber))
+        {
+            resultTextBlock.Text = &quot;Account creation failed. Account number already exists.&quot;;
+            return;
+        }
+
+        // Create a new account if the user clicked &quot;Create Account&quot; in the CreateAccount window
+        string firstName = createAccountWindow.firstNameTextBox.Text;
+        string lastName = createAccountWindow.lastNameTextBox.Text;
+        double initialBalance = double.Parse(createAccountWindow.initialBalanceTextBox.Text);
+        bool isSavingsAccount = createAccountWindow.IsSavingsAccount;
+
+        // Create the appropriate account type based on user selection
+        if (isSavingsAccount)
+        {
+            account = new SavingsAccount(newAccountNumber, firstName, lastName, initialBalance);
+        }
+        else
+        {
+            account = new CurrentAccount(newAccountNumber, firstName, lastName, initialBalance) ;
+        }
+
+        account.Deposit(initialBalance);  // Deposit initial balance
+
+        accounts.Add(account);  // Add the account to the list
+        UpdateAccountComboBox(); // Update the ComboBox with the new account number
+        resultTextBlock.Text = &quot;Account created successfully.&quot;;
+    }
+    else
+    {
+        resultTextBlock.Text = &quot;Account creation canceled.&quot;;
+    }
+}
+</code></pre>
+</details>
+<ul>
+<li>Testing the App you should see the following functionality, you can enter your own details. Note there is no input error checking for account numbers format. Also many of the functions/methods do not exist so there will be errors there too.</li>
+</ul>
+<div align=center>
+<p><img src="./figures/CreateAccountExample_default.gif" alt="" /></p>
+</div>
+</li>
+<li>
+<p>Now we create the functionality of the <code>ModifyAccountButton_Click</code> Button:</p>
+<details>
+<summary>Code here..</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+///  Invokes the ModifyWindow to modify the account first and last name
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void ModifyAccountButton_Click(object sender, RoutedEventArgs e)
+{
+    string fn = account.FirstName;
+    string ln = account.LastName;
+
+    // Open the ModifyWindow as a modal dialog
+    ModifyWindow modifyWindow = new ModifyWindow(fn,ln);
+    modifyWindow.Owner = this;
+    modifyWindow.ShowDialog();
+
+    if (modifyWindow.DialogResult == true)
+    {
+        // Modify account details if the user clicked &quot;Modify&quot; in the ModifyWindow
+        if (account != null)
+        {
+            account.ModifyAccount(modifyWindow.NewFirstName, modifyWindow.NewLastName);
+            UpdateDetailsLabel();
+            resultTextBlock.Text = &quot;Account details modified successfully.&quot;;
+        }
+        else
+        {
+            resultTextBlock.Text = &quot;No account selected.&quot;;
+        }
+    }
+    else
+    {
+        resultTextBlock.Text = &quot;Modification canceled.&quot;;
+    }
+}
+</code></pre>
+</details>
+<div align=center>
+<p><img src="./figures/ModifyAccountExample_default.gif" alt="" /></p>
+</div>
+</li>
+<li>
+<p>Now we create the functionality of the <code>DepositButton_Click</code> Button:</p>
+<details>
+<summary>Code here...</summary>
+<pre><code class="language-csharp">private void DepositButton_Click(object sender, RoutedEventArgs e)
+{
+    // Open the DepositWindow as a modal dialog
+    DepositWindow depositWindow = new DepositWindow();
+    depositWindow.Owner = this;
+    depositWindow.ShowDialog();
+
+    if (depositWindow.DialogResult == true)
+    {
+        // Deposit amount if the user clicked &quot;Deposit&quot; in the DepositWindow
+        if (account != null)
+        {
+            account.Deposit(depositWindow.DepositAmount);
+            UpdateDetailsLabel();
+            resultTextBlock.Text = $&quot;Deposited {depositWindow.DepositAmount:C}.&quot;;
+        }
+        else
+        {
+            resultTextBlock.Text = &quot;No account selected.&quot;;
+        }
+    }
+    else
+    {
+        resultTextBlock.Text = &quot;Deposit canceled.&quot;;
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Now we create the functionality of the <code>WithdrawButton_Click</code> Button:</p>
+<details>
+<summary>Code here.. </summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Invokes the Withdraw window, money can be withdrawn if the balance is available
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void WithdrawButton_Click(object sender, RoutedEventArgs e)
+{
+    if (account != null)
+    {
+        double currentBalance = account.GetBalance(); // Replace with your logic to get the current balance
+
+        // Open the WithdrawWindow as a modal dialog and pass the current balance
+        WithdrawWindow withdrawWindow = new WithdrawWindow(currentBalance);
+        withdrawWindow.Owner = this;
+        withdrawWindow.ShowDialog();
+
+        if (withdrawWindow.DialogResult == true)
+        {
+            // Withdraw amount if the user clicked &quot;Withdraw&quot; in the WithdrawWindow
+            account.Withdraw(withdrawWindow.WithdrawAmount);
+            UpdateDetailsLabel();
+            resultTextBlock.Text = $&quot;Withdrawn {withdrawWindow.WithdrawAmount:C}.&quot;;
+        }
+        else
+        {
+            resultTextBlock.Text = &quot;Withdrawal canceled.&quot;;
+        }
+    }
+    else
+    {
+        resultTextBlock.Text = &quot;No account selected.&quot;;
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Now we create the functionality of the <code>DeleteAccountButton_Click</code> Button:</p>
+<details>
+<summary>Code here.. </summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// &quot;Deletes&quot; account by removing it from the list of accounts and setting the instance of account to null
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void DeleteAccountButton_Click(object sender, RoutedEventArgs e)
+{
+    // Delete the current account
+    if (account != null)
+    {
+        accounts.Remove(account); // Remove the account from the list
+        account = null;
+        UpdateDetailsLabel();
+        resultTextBlock.Text = &quot;Account deleted successfully.&quot;;
+    }
+    else
+    {
+        resultTextBlock.Text = &quot;No account selected.&quot;;
+    }
+}
+</code></pre>
+</details>
+</li>
+<li>
+<p>Now we create the functionality of the <code>ViewBalanceButton_Click</code> Button: </p>
+<details>
+<summary>Code here..</summary>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Invokes the updateDetailsLabel function if account is not null
+/// &lt;/summary&gt;
+/// &lt;param name=&quot;sender&quot;&gt;&lt;/param&gt;
+/// &lt;param name=&quot;e&quot;&gt;&lt;/param&gt;
+private void ViewBalanceButton_Click(object sender, RoutedEventArgs e)
+    {
+        // View balance of the current account
+        if (account != null)
+        {
+            UpdateDetailsLabel();
+        }
+        else
+        {
+            resultTextBlock.Text = &quot;No account selected.&quot;;
+        }
+    }
+
+</code></pre>
+</details>
+</li>
+<li>
+<p>Try running the completed program and explore the functionality, and find limitations.</p>
+<ul>
+<li>Consider increasing the functionality</li>
+<li>Error checking</li>
+<li>Remove unnecessary code</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="download-project"><a class="header" href="#download-project">Download project:</a></h2>
+<p>You can download the zipped project here -&gt; <a href="BankingApp_Wpf.zip">BankingApp_Wpf.zip</a></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Lab_13/Lab_13.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../myFirstRepository/myFirstRepository.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Lab_13/Lab_13.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../myFirstRepository/myFirstRepository.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
