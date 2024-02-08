@@ -226,33 +226,14 @@ public void Stop()
 </ol>
 <hr />
 <h2 id="task-2"><a class="header" href="#task-2">Task 2:</a></h2>
-<h1>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-6. Modify <code>main()</code> in the <code>Program.cs</code> file to create to objects of the Car class called, <code>myCar</code> and <code>anotherCar</code>, remember you need to initialise the object using the expected arguments as per the Car constructor.</h1>
 <ol start="6">
-<li>Modify <code>main()</code> in the <code>Program.cs</code> file to create to objects of the <code>Car</code> class called, <code>myCar</code> and <code>anotherCar</code>, remember you need to initialise the object using the expected arguments as per the <code>Car</code> constructor.</li>
-</ol>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<pre><code>```c#
-// Creating Car instances
+<li>
+<p>Modify <code>main()</code> in the <code>Program.cs</code> file to create to objects of the <code>Car</code> class called, <code>myCar</code> and <code>anotherCar</code>, remember you need to initialise the object using the expected arguments as per the <code>Car</code> constructor.</p>
+<pre><code class="language-c#">// Creating Car instances
 Car myCar = new Car("Ford Puma", 2022);
 Car anotherCar = new Car("Honda Accord", 2021);
-```
 </code></pre>
-<ol start="7">
+</li>
 <li>
 <p>For each object call the respective methods; <code>start</code>, <code>accelerate</code> and <code>stop</code></p>
 <pre><code class="language-c#">// Using Car methods
@@ -419,20 +400,6 @@ public void Temperature()
 </li>
 <li>
 <p>Go back to <code>Program.cs</code> fix the errors in the initialisation of the Car by adding a <code>new GasEngine</code> and <code>new ElectricEngine</code>.</p>
-</li>
-</ol>
-<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</p>
-<pre><code class="language-c#">
-</code></pre>
-<ol start="19">
-<li>Run and see the following output:</li>
-</ol>
-<p><img src="Figures/Task4_Output.png" alt="" /></p>
-<p>Can you see that the Interface Engine has been invoked and the Gas Engine has started for the Ford Puma.</p>
-<ol start="20">
-<li>
-<p>Complete the other Methods for the <code>ElectricEngine</code> and <code>GasEngine</code> classes.
-=======</p>
 <pre><code class="language-c#">Car myCar = new Car("Ford Puma", 2022, new GasEngine());
 Car anotherCar = new Car("Honda Accord", 2021, new ElectricEngine());
 </code></pre>
@@ -446,21 +413,6 @@ Car anotherCar = new Car("Honda Accord", 2021, new ElectricEngine());
 <p>Complete the other Methods for the <code>ElectricEngine</code> and <code>GasEngine</code> classes.</p>
 </li>
 </ol>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>dev</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
 <hr />
 <h2 id="task-5"><a class="header" href="#task-5">Task 5</a></h2>
 <p>Because the <code>IEngine</code> can be injected and delegated make a <code>Boat</code> class and <code>start</code>, <code>accelerate</code>, and <code>stop</code> the its engine.</p>
