@@ -5,11 +5,15 @@ language = "en"
 multilingual = false
 src = "content"
 
+[preprocessor.pagetoc]
+
 [output.html]
 mathjax-support = true
-git-repository-url = "https://github.com/cccu-uk/ELEE1149_Exercises"
-edit-url-template = "https://github.com/cccu-uk/ELEE1149_Exercises/edit/master/{path}"
+git-repository-url = "https://github.com/uniofgreenwich/ELEE1149_Exercises"
+edit-url-template = "https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/master/{path}"
 input-404 = "404/404.md"
+additional-css = ["theme/pagetoc.css"]
+additional-js  = ["theme/pagetoc.js"]
 
 [output.html.print]
 enable = false
