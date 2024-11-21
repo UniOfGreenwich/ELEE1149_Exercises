@@ -3,8 +3,8 @@
 
 :root {
     --sidebar-width: 300px;
-    --page-padding: 15px;
-    --content-max-width:55%; /*750px;*/
+    --page-padding: 10px;
+    --content-max-width:800px; /*750px;*/
     --menu-bar-height: 50px;
     --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
     --code-font-size: 0.875em /* please adjust the ace font size accordingly in editor.js */
@@ -239,8 +239,8 @@
 
     /* Sidebar settings */
     --sidebar-bg: #44475a; /* Sidebar background */
-    --sidebar-fg: #f8f8f2; /* Sidebar text */
-    --sidebar-active: #6272a4; /* Active item */
+    --sidebar-fg: #9b78dd; /* Sidebar text */
+    --sidebar-active: #ad49cc; /* Active item */
     --sidebar-non-existant: #6272a4; /* Non-existent items */
     --sidebar-spacer: #383a4a; /* Added for consistency */
 
@@ -337,7 +337,7 @@
 
 /* Override Code Blocks for Rose Pink theme */
 .pinkrose .hljs {
-    background: #fddeda; /* Light pink background for contrast */
+    background: #fdebf6; /* Light pink background for contrast */
     color: #b6485e; /* Darker rose color for text */
 }
 
@@ -467,8 +467,8 @@
     --sidebar-bg: #352839; /* Soft pinkish-white for sidebar background */
     --sidebar-fg: #FFF0F8; /* Burgundy for sidebar text */
 
-    --sidebar-non-existant: #E8D8E0; /* Soft lavender for non-existent items */
-    --sidebar-active: #DAA6B1; /* A softer, lighter shade of Burgundy */
+    --sidebar-non-existant: #74475d; /* Soft lavender for non-existent items */
+    --sidebar-active: #db607a; /* A softer, lighter shade of Burgundy */
     --sidebar-spacer: #FFFAFA; /* Very light pink for sidebar spacer */
 
     --scrollbar: #B8A8B0; /* Muted lavender for scrollbar */
@@ -515,11 +515,11 @@
 }
 
 .space {
-    --bg: #000000;
+    --bg: #020305;
     --fg: #ffffff;
     --menu-bg: var(--bg);
 
-    --sidebar-bg: #1e1f1e;
+    --sidebar-bg: #080911;
     --sidebar-fg: #c8c9db;
     --sidebar-non-existant: #4a7289;
     --sidebar-active: #86d8f5;
@@ -557,12 +557,12 @@
 }
 
 .space .hljs {
-    background: #c5e1fc; /* A soft pinkish-white, in line with the theme */
-    color: #060f29; /* Burgundy for the code text, ensuring readability */
+    background: #ddefff; /* A soft blueish-white, in line with the theme */
+    color: #060f29; /* Darkblues for the code text, ensuring readability */
 }
 
 .space .hljs-section {
-    color: #a8d3fc; /* A soft brownish-pink, for syntax highlighting */
+    color: #a8d3fc; /* A soft blueish-white, for syntax highlighting */
 }
 
 .ecoFriend {
