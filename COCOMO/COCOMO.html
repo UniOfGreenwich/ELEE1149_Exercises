@@ -197,7 +197,7 @@
 \]</p>
 <p>Where:</p>
 <ul>
-<li><strong>EAF</strong> is the product of 15 cost driver multipliers (described below).</li>
+<li><strong>EAF</strong> is the product of 15 cost driver multipliers, categories below (full table <a href="http://127.0.0.1:8000/COCOMO/Intermediate_COCOMO.html#1-product-attributes">Intermediate COCOMO</a>).</li>
 </ul>
 <h4 id="cost-drivers"><a class="header" href="#cost-drivers">Cost Drivers:</a></h4>
 <ul>
@@ -211,7 +211,9 @@
 <p>\[
 \text{EAF} = 1.15 \times 0.86 \times 0.91 = 0.90
 \]</p>
-<p>Effort = \( 3.0 \times (25)^{1.12} \times 0.90 \approx 93.9 \text{ person-months} \).</p>
+<p>\[
+Effort =  3.0 \times (25)^{1.12} \times 0.90 \approx 93.9 \text{ person-months}
+\].</p>
 <hr />
 <h3 id="3-detailed-cocomo-cocomo-ii"><a class="header" href="#3-detailed-cocomo-cocomo-ii">3. <strong>Detailed COCOMO (COCOMO II)</strong></a></h3>
 <p><strong>COCOMO II</strong> refines the estimation process by accounting for additional factors such as reuse, modern development practices, and the various phases of the software lifecycle (e.g., design, code, test). COCOMO II is designed to handle contemporary development environments, including object-oriented programming, reusable components, and prototyping.</p>
@@ -266,10 +268,6 @@
 <hr />
 <hr />
 <h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
-<p>Basic COCOMO Equation:</p>
-<p>\[
-\text{Effort (person-months)} = a \times (KLOC)^b
-\]</p>
 <pre><code class="language-admonish question title=&#39;### Question 1: Small Organic Project&#39;">
 
 You are tasked with estimating the effort for a small **Organic** software project with an estimated size of **10 KLOC** (thousand lines of code).
@@ -279,6 +277,14 @@ Constants for Organic projects:
 - b = 1.05
 - c = 2.5
 - d = 0.38
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 </code></pre>
 <p><strong>Tasks:</strong></p>
@@ -303,6 +309,15 @@ Constants for Semi-Detached projects:
 - c = 2.5
 - d = 0.35
 
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
+
 </code></pre>
 <p><strong>Tasks:</strong></p>
 <pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
@@ -325,6 +340,14 @@ Constants for Embedded projects:
 - b = 1.20
 - c = 2.5
 - d = 0.32
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 </code></pre>
 <p><strong>Tasks:</strong></p>
@@ -350,6 +373,14 @@ Constants for Organic projects:
 - c = 2.5
 - d = 0.38
 
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
+
 </code></pre>
 <p><strong>Tasks:</strong></p>
 <pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
@@ -373,6 +404,14 @@ Constants for Semi-Detached projects:
 - b = 1.12
 - c = 2.5
 - d = 0.35
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 </code></pre>
 <p><strong>Tasks:</strong></p>
@@ -398,6 +437,14 @@ Constants for Embedded projects:
 - b = 1.20
 - c = 2.5
 - d = 0.32
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 </code></pre>
 <p><strong>Tasks:</strong></p>
