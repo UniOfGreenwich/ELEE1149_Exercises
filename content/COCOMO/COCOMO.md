@@ -35,7 +35,7 @@ The **Intermediate COCOMO** model introduces cost drivers that adjust the estima
 \\]
 
 Where:
-- **EAF** is the product of 15 cost driver multipliers (described below).
+- **EAF** is the product of 15 cost driver multipliers, categories below (full table [Intermediate COCOMO](http://127.0.0.1:8000/COCOMO/Intermediate_COCOMO.html#1-product-attributes)).
 
 #### Cost Drivers:
 - **Product Attributes**: Reliability, complexity, etc.
@@ -50,7 +50,9 @@ For a project with 25 KLOC and high reliability (RELY = 1.15), good programmer c
 \text{EAF} = 1.15 \times 0.86 \times 0.91 = 0.90
 \\]
 
-Effort = \\( 3.0 \times (25)^{1.12} \times 0.90 \approx 93.9 \text{ person-months} \\).
+\\[
+Effort =  3.0 \times (25)^{1.12} \times 0.90 \approx 93.9 \text{ person-months} 
+\\].
 
 
 ------
@@ -112,12 +114,6 @@ The constants **a**, **b**, **c**, and **d** are based on the project type:
 
 ## Questions
 
-Basic COCOMO Equation: 
-
-\\[
-\text{Effort (person-months)} = a \times (KLOC)^b
-\\]
-
 ~~~admonish question title='### Question 1: Small Organic Project'
 
 
@@ -128,6 +124,14 @@ Constants for Organic projects:
 - b = 1.05
 - c = 2.5
 - d = 0.38
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 ~~~
 
@@ -160,6 +164,15 @@ Constants for Semi-Detached projects:
 - c = 2.5
 - d = 0.35
 
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
+
 ~~~
 
 **Tasks:**
@@ -190,6 +203,14 @@ Constants for Embedded projects:
 - b = 1.20
 - c = 2.5
 - d = 0.32
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 ~~~
 
@@ -223,6 +244,14 @@ Constants for Organic projects:
 - b = 1.05
 - c = 2.5
 - d = 0.38
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 ~~~
 
@@ -258,6 +287,14 @@ Constants for Semi-Detached projects:
 - c = 2.5
 - d = 0.35
 
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
+
 ~~~
 
 **Tasks:**
@@ -290,6 +327,14 @@ Constants for Embedded projects:
 - b = 1.20
 - c = 2.5
 - d = 0.32
+
+\\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\\]
+
+\\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\\]
 
 ~~~
 

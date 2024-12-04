@@ -50,7 +50,7 @@ For example, assume the following ratings for the cost drivers:
 The **EAF** is calculated by multiplying the values of these drivers:
 
 \\[
-\text{EAF} = 1.15 	\times 1.00 	\times 1.15 	\times 0.86 	\times 0.91 \approx 1.01
+\text{EAF} = 1.15 	\cdot 1.00 	\cdot 1.15 	\cdot 0.86 	\cdot 0.91 \approx 1.01
 \\]
 
 
@@ -70,10 +70,10 @@ You are tasked with estimating the effort for a small **Organic** software proje
 
 The **Effort Adjustment Factor (EAF)** is calculated as:
 
-\\[\text{EAF} = 1.15 \times 0.86 \times 0.91 \approx 0.90\\]
+\\[\text{EAF} = 1.15 \cdot 0.86 \cdot 0.91 \approx 0.90\\]
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
+\text{Effort (person-months)} = a \cdot (KLOC)^b \cdot EAF
 \\)
 
 Constants for Organic projects:
@@ -88,7 +88,7 @@ Constants for Organic projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 2.4 \times (10)^{1.05} \times 0.90 \approx 22.8 \text{ person-months}\\]
+\\[\text{Effort} = 2.4 \cdot (10)^{1.05} \cdot 0.90 \approx 22.8 \text{ person-months}\\]
 
 ~~~
 
@@ -96,7 +96,7 @@ Constants for Organic projects:
  
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (22.8)^{0.38} \approx 10.4 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (22.8)^{0.38} \approx 10.4 \text{ months}\\]
 
 ~~~
 
@@ -113,10 +113,10 @@ A medium-sized **Semi-Detached** project is estimated to have **50 KLOC**.
 
 The **EAF** is calculated as:
 
-\\[\text{EAF} = 1.30 \times 0.86 \times 1.10 \approx 1.23\\]
+\\[\text{EAF} = 1.30 \cdot 0.86 \cdot 1.10 \approx 1.23\\]
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
 \\)
 
 
@@ -132,7 +132,7 @@ Constants for Semi-Detached projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 3.0 \times (50)^{1.12} \times 1.23 \approx 207.3 \text{ person-months}\\]
+\\[\text{Effort} = 3.0 \cdot (50)^{1.12} \cdot 1.23 \approx 207.3 \text{ person-months}\\]
 
 ~~~
 
@@ -141,7 +141,7 @@ Constants for Semi-Detached projects:
 
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (207.3)^{0.35} \approx 18.9 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (207.3)^{0.35} \approx 18.9 \text{ months}\\]
 
 ~~~
 
@@ -158,10 +158,10 @@ A large **Embedded** project is estimated at **200 KLOC**.
 
 The **EAF** is calculated as:
 
-\\[\text{EAF} = 1.15 \times 0.88 \times 0.91 \approx 0.92\\]
+\\[\text{EAF} = 1.15 \cdot 0.88 \cdot 0.91 \approx 0.92\\]
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
 \\)
 
 Constants for Embedded projects:
@@ -176,7 +176,7 @@ Constants for Embedded projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 3.6 \times (200)^{1.20} \times 0.92 \approx 1412.1 \text{ person-months}\\]
+\\[\text{Effort} = 3.6 \cdot (200)^{1.20} \cdot 0.92 \approx 1412.1 \text{ person-months}\\]
 
 ~~~
 
@@ -184,7 +184,7 @@ Constants for Embedded projects:
 
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (1412.1)^{0.32} \approx 32.3 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (1412.1)^{0.32} \approx 32.3 \text{ months}\\]
 
 ~~~
 
@@ -201,10 +201,10 @@ A tiny **Organic** project is estimated at **2 KLOC**.
 
 The **EAF** is calculated as:
 
-\\[\text{EAF} = 1.10 \times 0.91 \times 0.92 \approx 0.92\\]
+\\[\text{EAF} = 1.10 \cdot 0.91 \cdot 0.92 \approx 0.92\\] 
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
 \\)
 
 Constants for Organic projects:
@@ -219,7 +219,7 @@ Constants for Organic projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 2.4 \times (2)^{1.05} \times 0.92 \approx 4.8 \text{ person-months}\\]
+\\[\text{Effort} = 2.4 \cdot (2)^{1.05} \cdot 0.92 \approx 4.8 \text{ person-months}\\]
 
 ~~~
 
@@ -227,7 +227,7 @@ Constants for Organic projects:
 
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (4.8)^{0.38} \approx 6.3 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (4.8)^{0.38} \approx 6.3 \text{ months}\\]
 
 ~~~
 
@@ -244,11 +244,11 @@ A **Semi-Detached** project has an estimated size of **30 KLOC**.
 
 The **EAF** is calculated as:
 
-\\[\text{EAF} = 1.04 \times 0.86 \times 0.91 \approx 0.81\\]
+\\[\text{EAF} = 1.04 \cdot 0.86 \cdot 0.91 \approx 0.81\\]
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
-\\)
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\\) 
 
 Constants for Semi-Detached projects:
 - a = 3.0
@@ -262,7 +262,7 @@ Constants for Semi-Detached projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 3.0 \times (30)^{1.12} \times 0.81 \approx 79.6 \text{ person-months}\\]
+\\[\text{Effort} = 3.0 \cdot (30)^{1.12} \cdot 0.81 \approx 79.6 \text{ person-months}\\]
 
 ~~~
 
@@ -270,7 +270,7 @@ Constants for Semi-Detached projects:
 
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (79.6)^{0.35} \approx 13.7 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (79.6)^{0.35} \approx 13.7 \text{ months}\\]
 
 ~~~
 
@@ -287,10 +287,10 @@ An **Embedded** project has an estimated size of **150 KLOC**.
 
 The **EAF** is calculated as:
 
-\\[\text{EAF} = 1.15 \times 1.30 \times 0.86 \approx 1.28\\]
+\\[\text{EAF} = 1.15 \cdot 1.30 \cdot 0.86 \approx 1.28\\]
 
 \\(
-\text{Effort (person-months)} = a \times (KLOC)^b
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
 \\)
 
 Constants for Embedded projects:
@@ -304,7 +304,7 @@ Constants for Embedded projects:
 
 **Effort (in person-months):**
 
-\\[\text{Effort} = 3.6 \times (150)^{1.20} \times 1.28 \approx 1552.7 \text{ person-months}\\]
+\\[\text{Effort} = 3.6 \cdot (150)^{1.20} \cdot 1.28 \approx 1552.7 \text{ person-months}\\]
 
 ~~~
 
@@ -312,6 +312,6 @@ Constants for Embedded projects:
 
 **Development Time:**
 
-\\[\text{Development Time} = 2.5 \times (1552.7)^{0.32} \approx 33.5 \text{ months}\\]
+\\[\text{Development Time} = 2.5 \cdot (1552.7)^{0.32} \approx 33.5 \text{ months}\\]
 
 ~~~
