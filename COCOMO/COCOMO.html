@@ -1,0 +1,469 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>COCOMO - Software Engineering</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/pagetoc.css">
+        <link rel="stylesheet" href=".././theme/css/mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/css/code.css">
+        <link rel="stylesheet" href=".././theme/css/terminal.css">
+        <link rel="stylesheet" href=".././theme/css/output.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="burgundy">Burgundy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="dracula">Dracula</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ecoFriend">EcoFriend</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="pinkrose">Pinkrose</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="space">Space</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sustain">Sustain</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="tokyonight">Tokyonight</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Software Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/main/content/COCOMO/COCOMO.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="cocomo-constructive-cost-model-overview"><a class="header" href="#cocomo-constructive-cost-model-overview">COCOMO (Constructive Cost Model) Overview</a></h1>
+<p>COCOMO is an algorithmic software cost estimation model developed by Barry Boehm in 1981. It estimates the effort, cost, and development time required to build software systems. COCOMO has several variations, each improving the estimation process for different types and sizes of software projects.</p>
+<h2 id="cocomo-models"><a class="header" href="#cocomo-models">COCOMO Models</a></h2>
+<h3 id="1-basic-cocomo"><a class="header" href="#1-basic-cocomo">1. <strong>Basic COCOMO</strong></a></h3>
+<p>The <strong>Basic COCOMO</strong> model is the simplest form of COCOMO, providing a rough estimate of software development effort based primarily on the size of the software in terms of <strong>KLOC</strong> (thousands of lines of code).</p>
+<h4 id="basic-effort-equation"><a class="header" href="#basic-effort-equation">Basic Effort Equation:</a></h4>
+<p>\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\]</p>
+<p>Where:</p>
+<ul>
+<li><strong>a</strong> and <strong>b</strong> are constants based on the project type (Organic, Semi-Detached, Embedded).</li>
+<li><strong>KLOC</strong> is the size of the software in thousands of lines of code.</li>
+</ul>
+<h4 id="project-types"><a class="header" href="#project-types">Project Types:</a></h4>
+<ul>
+<li><strong>Organic</strong>: Small teams working on well-understood, relatively simple projects.</li>
+<li><strong>Semi-Detached</strong>: Medium-sized teams working on moderately complex projects.</li>
+<li><strong>Embedded</strong>: Large teams working on complex, tightly constrained systems (e.g., real-time systems).</li>
+</ul>
+<hr />
+<h3 id="2-intermediate-cocomo"><a class="header" href="#2-intermediate-cocomo">2. <strong>Intermediate COCOMO</strong></a></h3>
+<p>The <strong>Intermediate COCOMO</strong> model introduces cost drivers that adjust the estimation based on various factors such as project complexity, team experience, and hardware constraints. These cost drivers produce an <strong>Effort Adjustment Factor (EAF)</strong>.</p>
+<h4 id="intermediate-effort-equation"><a class="header" href="#intermediate-effort-equation">Intermediate Effort Equation:</a></h4>
+<p>\[
+\text{Effort (person-months)} = a \times (KLOC)^b \times EAF
+\]</p>
+<p>Where:</p>
+<ul>
+<li><strong>EAF</strong> is the product of 15 cost driver multipliers (described below).</li>
+</ul>
+<h4 id="cost-drivers"><a class="header" href="#cost-drivers">Cost Drivers:</a></h4>
+<ul>
+<li><strong>Product Attributes</strong>: Reliability, complexity, etc.</li>
+<li><strong>Hardware Attributes</strong>: Time and storage constraints.</li>
+<li><strong>Personnel Attributes</strong>: Experience, capability.</li>
+<li><strong>Project Attributes</strong>: Tool use, team cohesion.</li>
+</ul>
+<h4 id="example"><a class="header" href="#example">Example:</a></h4>
+<p>For a project with 25 KLOC and high reliability (RELY = 1.15), good programmer capability (PCAP = 0.86), and modern tools (TOOL = 0.91):</p>
+<p>\[
+\text{EAF} = 1.15 \times 0.86 \times 0.91 = 0.90
+\]</p>
+<p>Effort = \( 3.0 \times (25)^{1.12} \times 0.90 \approx 93.9 \text{ person-months} \).</p>
+<hr />
+<h3 id="3-detailed-cocomo-cocomo-ii"><a class="header" href="#3-detailed-cocomo-cocomo-ii">3. <strong>Detailed COCOMO (COCOMO II)</strong></a></h3>
+<p><strong>COCOMO II</strong> refines the estimation process by accounting for additional factors such as reuse, modern development practices, and the various phases of the software lifecycle (e.g., design, code, test). COCOMO II is designed to handle contemporary development environments, including object-oriented programming, reusable components, and prototyping.</p>
+<h4 id="additional-features"><a class="header" href="#additional-features">Additional Features:</a></h4>
+<ul>
+<li><strong>Early Design Model</strong>: Used when only rough estimates are available.</li>
+<li><strong>Post-Architecture Model</strong>: Used once the system design is more complete, providing more accurate estimates.</li>
+</ul>
+<h3 id="detailed-cocomo-effort-equation"><a class="header" href="#detailed-cocomo-effort-equation">Detailed COCOMO Effort Equation:</a></h3>
+<p>\[
+\text{Effort (person-months)} = a \times (KLOC)^b \times EAF
+\]</p>
+<p>Where <strong>EAF</strong> is calculated based on additional factors like team cohesion, development flexibility, and architecture risk resolution.</p>
+<hr />
+<h2 id="additional-cocomo-information"><a class="header" href="#additional-cocomo-information">Additional COCOMO Information:</a></h2>
+<ul>
+<li><strong>Development Time</strong>: The total time to develop the project is often calculated as:</li>
+</ul>
+<p>\[
+\text{Development Time (months)} = c \times (\text{Effort})^d
+\]</p>
+<p>Where <strong>c</strong> and <strong>d</strong> are constants based on the project type.</p>
+<ul>
+<li>
+<p><strong>COCOMO II and Modern Practices</strong>: COCOMO II introduces new parameters to adjust for code reuse, non-linear scaling factors, and new types of software practices (like Agile or DevOps).</p>
+</li>
+<li>
+<p><strong>Scalability</strong>: COCOMO can be scaled to handle small projects with less than 2 KLOC as well as large, complex systems exceeding 100 KLOC. However, it's crucial to have accurate size estimations early on for the model to provide useful estimates.</p>
+</li>
+</ul>
+<h3 id="advantages-of-cocomo"><a class="header" href="#advantages-of-cocomo">Advantages of COCOMO:</a></h3>
+<ol>
+<li><strong>Objective Estimation</strong>: Based on historical data and mathematical models.</li>
+<li><strong>Scalability</strong>: Suitable for projects of various sizes.</li>
+<li><strong>Customization</strong>: Can be tailored to different types of projects.</li>
+<li><strong>Transparency</strong>: Helps identify factors that contribute to cost and effort.</li>
+</ol>
+<h3 id="limitations-of-cocomo"><a class="header" href="#limitations-of-cocomo">Limitations of COCOMO:</a></h3>
+<ol>
+<li><strong>Dependence on Accurate Size Estimates</strong>: The model's accuracy is highly dependent on the precision of the size estimates, which can be difficult early in a project.</li>
+<li><strong>Historical Data Dependency</strong>: The constants are derived from historical project data, which may not fully reflect the nuances of modern development environments.</li>
+<li><strong>Assumptions</strong>: The model assumes that development practices remain constant throughout the project, which is often not the case in agile or iterative environments.</li>
+</ol>
+<h2 id="example-project-type-constants"><a class="header" href="#example-project-type-constants">Example Project Type Constants:</a></h2>
+<p>The constants <strong>a</strong>, <strong>b</strong>, <strong>c</strong>, and <strong>d</strong> are based on the project type:</p>
+<div class="table-wrapper"><table><thead><tr><th>Project Type</th><th>a</th><th>b</th><th>c</th><th>d</th></tr></thead><tbody>
+<tr><td>Organic</td><td>2.4</td><td>1.05</td><td>2.5</td><td>0.38</td></tr>
+<tr><td>Semi-detached</td><td>3.0</td><td>1.12</td><td>2.5</td><td>0.35</td></tr>
+<tr><td>Embedded</td><td>3.6</td><td>1.20</td><td>2.5</td><td>0.32</td></tr>
+</tbody></table>
+</div>
+<hr />
+<hr />
+<h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
+<p>Basic COCOMO Equation:</p>
+<p>\[
+\text{Effort (person-months)} = a \times (KLOC)^b
+\]</p>
+<pre><code class="language-admonish question title=&#39;### Question 1: Small Organic Project&#39;">
+
+You are tasked with estimating the effort for a small **Organic** software project with an estimated size of **10 KLOC** (thousand lines of code).
+
+Constants for Organic projects:
+- a = 2.4
+- b = 1.05
+- c = 2.5
+- d = 0.38
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months)&#39;">
+
+**Effort (in person-months):**
+\\[\text{Effort} = 2.4 \times (10)^{1.05} \approx 25.4 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months)&#39;">
+**Development Time (in months):**
+\\[\text{Development Time} = 2.5 \times (25.4)^{0.38} \approx 10.9 \text{ months}\\]
+
+</code></pre>
+<hr />
+<pre><code class="language-admonish question title=&#39;### Question 2: Medium Semi-Detached Project&#39;">
+A medium-sized **Semi-Detached** project is estimated to have **50 KLOC**. You are tasked with estimating the effort and development time.
+
+Constants for Semi-Detached projects:
+- a = 3.0
+- b = 1.12
+- c = 2.5
+- d = 0.35
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
+
+    **Effort (in person-months):**
+    \\[\text{Effort} = 3.0 \times (50)^{1.12} \approx 168.5 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
+    **Effort (in person-months):**
+    \\[\text{Development Time} = 2.5 \times (168.5)^{0.35} \approx 17.9 \text{ months}\\]
+
+</code></pre>
+<hr />
+<pre><code class="language-admonish question title=&#39;### Question 3: Large Embedded Project&#39;">
+A large **Embedded** project is being developed, and its size is estimated at **200 KLOC**.
+
+Constants for Embedded projects:
+- a = 3.6
+- b = 1.20
+- c = 2.5
+- d = 0.32
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Effort} = 3.6 \times (200)^{1.20} \approx 1535.2 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Development Time} = 2.5 \times (1535.2)^{0.32} \approx 33.4 \text{ months}\\]
+
+</code></pre>
+<hr />
+<pre><code class="language-admonish question title=&#39;### Question 4: Tiny Organic Project&#39;">
+A tiny **Organic** project is estimated to be **2 KLOC**. Calculate the effort and development time.
+
+Constants for Organic projects:
+- a = 2.4
+- b = 1.05
+- c = 2.5
+- d = 0.38
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Effort} = 2.4 \times (2)^{1.05} \approx 5.0 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Development Time} = 2.5 \times (5.0)^{0.38} \approx 6.4 \text{ months}\\]
+
+</code></pre>
+<hr />
+<pre><code class="language-admonish question title=&#39;### Question 5: Medium-Sized Semi-Detached Project&#39;">
+A medium-sized **Semi-Detached** project is estimated at **30 KLOC**. Estimate the effort and development time.
+
+Constants for Semi-Detached projects:
+- a = 3.0
+- b = 1.12
+- c = 2.5
+- d = 0.35
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
+
+
+**Effort (in person-months):**
+\\[\text{Effort} = 3.0 \times (30)^{1.12} \approx 98.2 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Development Time} = 2.5 \times (98.2)^{0.35} \approx 14.7 \text{ months}\\]
+
+</code></pre>
+<hr />
+<pre><code class="language-admonish question title=&#39;### Question 6: Large Embedded Project&#39;">
+An **Embedded** project has an estimated size of **150 KLOC**. Estimate the effort and development time.
+
+Constants for Embedded projects:
+- a = 3.6
+- b = 1.20
+- c = 2.5
+- d = 0.32
+
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
+
+**Effort (in person-months):**
+\\[\text{Effort} = 3.6 \times (150)^{1.20} \approx 1084.7 \text{ person-months}\\]
+
+</code></pre>
+<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
+**Effort (in person-months):**
+\\[\text{Development Time} = 2.5 \times (1084.7)^{0.32} \approx 30.1 \text{ months}\\]
+
+</code></pre>
+<hr />
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>COCOMO remains one of the most widely referenced and influential cost estimation models in software engineering. With updates through COCOMO II, it continues to adapt to modern development environments and remains useful for providing project managers with cost and time estimates based on a variety of influencing factors.</p>
+
+                    </main>
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Lab_9/Lab_9.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../COCOMO/Intermediate_COCOMO.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Lab_9/Lab_9.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../COCOMO/Intermediate_COCOMO.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/pagetoc.js"></script>
+
+
+    </div>
+    </body>
+</html>

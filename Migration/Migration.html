@@ -28,7 +28,11 @@
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        <link rel="stylesheet" href="../theme/pagetoc.css">
+        <link rel="stylesheet" href=".././theme/pagetoc.css">
+        <link rel="stylesheet" href=".././theme/css/mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/css/code.css">
+        <link rel="stylesheet" href=".././theme/css/terminal.css">
+        <link rel="stylesheet" href=".././theme/css/output.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -135,7 +139,7 @@
                         <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/master/content/Migration/Migration.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/main/content/Migration/Migration.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -163,7 +167,7 @@
                 </script>
 
                 <div id="content" class="content">
-                    <main>
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
                         <h1 id="migration"><a class="header" href="#migration">Migration</a></h1>
 <p>Migrating projects to the new branching strategies is a simple task outlined below.</p>
 <p><strong>Note</strong>: The process applies to <a href="release-deployment.html">release deployment</a> projects.
@@ -179,14 +183,22 @@ instructions <a href="continuous-deployment.html">here</a>.</p>
 </li>
 <li>
 <p>Merge <code>current-prod</code> into <code>master</code></p>
-<pre><code>$ git checkout master
+<pre><code class="language-admonish terminal">
+```
+$ git checkout master
 $ git merge current-prod
+```
+
 </code></pre>
 </li>
 <li>
 <p>Create a <code>develop</code> branch off of <code>master</code> if none exists</p>
-<pre><code>$ git checkout master
+<pre><code class="language-admonish terminal">
+```
+$ git checkout master
 $ git checkout -b develop
+```
+
 </code></pre>
 </li>
 <li>
@@ -209,7 +221,6 @@ We leverage this to make sure our core branches are safe.</p>
 </ol>
 
                     </main>
-
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                             <a rel="prev" href="../ReleaseDeployment/ReleaseDeployment.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
