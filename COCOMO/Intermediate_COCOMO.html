@@ -216,217 +216,323 @@
 \]</p>
 <hr />
 <h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
-<pre><code class="language-admonish question title=&#39;### Question 1: Small Organic Project&#39;">
-You are tasked with estimating the effort for a small **Organic** software project with an estimated size of **10 KLOC** (thousand lines of code).
-
-**Cost Drivers:**
-- **Required Software Reliability (RELY)**: 1.15 (High)
-- **Programmer Capability (PCAP)**: 0.86 (High)
-- **Use of Software Tools (TOOL)**: 0.91 (High)
-
-The **Effort Adjustment Factor (EAF)** is calculated as:
-
-\\[\text{EAF} = 1.15 \cdot 0.86 \cdot 0.91 \approx 0.90\\]
-
-\\(
+<div id="admonition-question-1-small-organic-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-1-small-organic-project-title">
+<div class="admonition-title">
+<div id="admonition-question-1-small-organic-project-title">
+<h3 id="question-1-small-organic-project"><a class="header" href="#question-1-small-organic-project">Question 1: Small Organic Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-1-small-organic-project"></a>
+</div>
+<div>
+<p>You are tasked with estimating the effort for a small <strong>Organic</strong> software project with an estimated size of <strong>10 KLOC</strong> (thousand lines of code).</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.15 (High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.86 (High)</li>
+<li><strong>Use of Software Tools (TOOL)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>Effort Adjustment Factor (EAF)</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 0.86 \cdot 0.91 \approx 0.90\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b \cdot EAF
-\\)
-
-Constants for Organic projects:
-- a = 2.4
-- b = 1.05
-
-</code></pre>
+\)</p>
+<p>Constants for Organic projects:</p>
+<ul>
+<li>a = 2.4</li>
+<li>b = 1.05</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 2.4 \cdot (10)^{1.05} \cdot 0.90 \approx 22.8 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;"> 
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (22.8)^{0.38} \approx 10.4 \text{ months}\\]
-
-</code></pre>
+<details id="admonition-calculate-the-effort-in-person-months" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 2.4 \cdot (10)^{1.05} \cdot 0.90 \approx 22.8 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (22.8)^{0.38} \approx 10.4 \text{ months}\]</p>
+</div>
+</details>
 <hr />
-<pre><code class="language-admonish question title=&#39;### Question 2: Medium Semi-Detached Project&#39;">
-A medium-sized **Semi-Detached** project is estimated to have **50 KLOC**.
-
-**Cost Drivers:**
-- **Product Complexity (CPLX)**: 1.30 (Very High)
-- **Analyst Capability (ACAP)**: 0.86 (High)
-- **Required Development Schedule (SCED)**: 1.10 (Very High)
-
-The **EAF** is calculated as:
-
-\\[\text{EAF} = 1.30 \cdot 0.86 \cdot 1.10 \approx 1.23\\]
-
-\\(
+<div id="admonition-question-2-medium-semi-detached-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-2-medium-semi-detached-project-title">
+<div class="admonition-title">
+<div id="admonition-question-2-medium-semi-detached-project-title">
+<h3 id="question-2-medium-semi-detached-project"><a class="header" href="#question-2-medium-semi-detached-project">Question 2: Medium Semi-Detached Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-2-medium-semi-detached-project"></a>
+</div>
+<div>
+<p>A medium-sized <strong>Semi-Detached</strong> project is estimated to have <strong>50 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Product Complexity (CPLX)</strong>: 1.30 (Very High)</li>
+<li><strong>Analyst Capability (ACAP)</strong>: 0.86 (High)</li>
+<li><strong>Required Development Schedule (SCED)</strong>: 1.10 (Very High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.30 \cdot 0.86 \cdot 1.10 \approx 1.23\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
-\\)
-
-
-Constants for Semi-Detached projects:
-- a = 3.0
-- b = 1.12
-
-</code></pre>
+\)</p>
+<p>Constants for Semi-Detached projects:</p>
+<ul>
+<li>a = 3.0</li>
+<li>b = 1.12</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 3.0 \cdot (50)^{1.12} \cdot 1.23 \approx 207.3 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
-
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (207.3)^{0.35} \approx 18.9 \text{ months}\\]
-
-</code></pre>
+<details id="admonition-calculate-the-effort-in-person-months-1" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-1-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-1-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-1"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.0 \cdot (50)^{1.12} \cdot 1.23 \approx 207.3 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-1" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-1-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-1-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-1"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (207.3)^{0.35} \approx 18.9 \text{ months}\]</p>
+</div>
+</details>
 <hr />
-<pre><code class="language-admonish question title=&#39;### Question 3: Large Embedded Project&#39;">
-A large **Embedded** project is estimated at **200 KLOC**.
-
-**Cost Drivers:**
-- **Platform Volatility (PVOL)**: 1.15 (Very High)
-- **Programmer Capability (PCAP)**: 0.88 (High)
-- **Application Experience (AEXP)**: 0.91 (High)
-
-The **EAF** is calculated as:
-
-\\[\text{EAF} = 1.15 \cdot 0.88 \cdot 0.91 \approx 0.92\\]
-
-\\(
+<div id="admonition-question-3-large-embedded-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-3-large-embedded-project-title">
+<div class="admonition-title">
+<div id="admonition-question-3-large-embedded-project-title">
+<h3 id="question-3-large-embedded-project"><a class="header" href="#question-3-large-embedded-project">Question 3: Large Embedded Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-3-large-embedded-project"></a>
+</div>
+<div>
+<p>A large <strong>Embedded</strong> project is estimated at <strong>200 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Platform Volatility (PVOL)</strong>: 1.15 (Very High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.88 (High)</li>
+<li><strong>Application Experience (AEXP)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 0.88 \cdot 0.91 \approx 0.92\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
-\\)
-
-Constants for Embedded projects:
-- a = 3.6
-- b = 1.20
-
-</code></pre>
+\)</p>
+<p>Constants for Embedded projects:</p>
+<ul>
+<li>a = 3.6</li>
+<li>b = 1.20</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 3.6 \cdot (200)^{1.20} \cdot 0.92 \approx 1412.1 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (1412.1)^{0.32} \approx 32.3 \text{ months}\\]
-
-</code></pre>
+<details id="admonition-calculate-the-effort-in-person-months-2" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-2-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-2-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-2"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.6 \cdot (200)^{1.20} \cdot 0.92 \approx 1412.1 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-2" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-2-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-2-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-2"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (1412.1)^{0.32} \approx 32.3 \text{ months}\]</p>
+</div>
+</details>
 <hr />
-<pre><code class="language-admonish question title=&#39;### Question 4: Tiny Organic Project&#39;">
-A tiny **Organic** project is estimated at **2 KLOC**.
-
-**Cost Drivers:**
-- **Required Software Reliability (RELY)**: 1.10 (High)
-- **Use of Modern Software Tools (TOOL)**: 0.91 (High)
-- **Team Cohesion (TEAM)**: 0.92 (High)
-
-The **EAF** is calculated as:
-
-\\[\text{EAF} = 1.10 \cdot 0.91 \cdot 0.92 \approx 0.92\\] 
-
-\\(
+<div id="admonition-question-4-tiny-organic-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-4-tiny-organic-project-title">
+<div class="admonition-title">
+<div id="admonition-question-4-tiny-organic-project-title">
+<h3 id="question-4-tiny-organic-project"><a class="header" href="#question-4-tiny-organic-project">Question 4: Tiny Organic Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-4-tiny-organic-project"></a>
+</div>
+<div>
+<p>A tiny <strong>Organic</strong> project is estimated at <strong>2 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.10 (High)</li>
+<li><strong>Use of Modern Software Tools (TOOL)</strong>: 0.91 (High)</li>
+<li><strong>Team Cohesion (TEAM)</strong>: 0.92 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.10 \cdot 0.91 \cdot 0.92 \approx 0.92\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
-\\)
-
-Constants for Organic projects:
-- a = 2.4
-- b = 1.05
-
-</code></pre>
+\)</p>
+<p>Constants for Organic projects:</p>
+<ul>
+<li>a = 2.4</li>
+<li>b = 1.05</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 2.4 \cdot (2)^{1.05} \cdot 0.92 \approx 4.8 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (4.8)^{0.38} \approx 6.3 \text{ months}\\]
-
-</code></pre>
+<details id="admonition-calculate-the-effort-in-person-months-3" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-3-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-3-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-3"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 2.4 \cdot (2)^{1.05} \cdot 0.92 \approx 4.8 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-3" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-3-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-3-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-3"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (4.8)^{0.38} \approx 6.3 \text{ months}\]</p>
+</div>
+</details>
 <hr />
-<pre><code class="language-admonish question title=&#39;### Question 5: Medium Semi-Detached Project&#39;">
-A **Semi-Detached** project has an estimated size of **30 KLOC**.
-
-**Cost Drivers:**
-- **Required Development Schedule (SCED)**: 1.04 (High)
-- **Analyst Capability (ACAP)**: 0.86 (High)
-- **Language and Tool Experience (LTEX)**: 0.91 (High)
-
-The **EAF** is calculated as:
-
-\\[\text{EAF} = 1.04 \cdot 0.86 \cdot 0.91 \approx 0.81\\]
-
-\\(
+<div id="admonition-question-5-medium-semi-detached-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-5-medium-semi-detached-project-title">
+<div class="admonition-title">
+<div id="admonition-question-5-medium-semi-detached-project-title">
+<h3 id="question-5-medium-semi-detached-project"><a class="header" href="#question-5-medium-semi-detached-project">Question 5: Medium Semi-Detached Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-5-medium-semi-detached-project"></a>
+</div>
+<div>
+<p>A <strong>Semi-Detached</strong> project has an estimated size of <strong>30 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Development Schedule (SCED)</strong>: 1.04 (High)</li>
+<li><strong>Analyst Capability (ACAP)</strong>: 0.86 (High)</li>
+<li><strong>Language and Tool Experience (LTEX)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.04 \cdot 0.86 \cdot 0.91 \approx 0.81\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
-\\) 
-
-Constants for Semi-Detached projects:
-- a = 3.0
-- b = 1.12
-
-</code></pre>
+\)</p>
+<p>Constants for Semi-Detached projects:</p>
+<ul>
+<li>a = 3.0</li>
+<li>b = 1.12</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 3.0 \cdot (30)^{1.12} \cdot 0.81 \approx 79.6 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (79.6)^{0.35} \approx 13.7 \text{ months}\\]
-
-</code></pre>
+<details id="admonition-calculate-the-effort-in-person-months-4" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-4-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-4-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-4"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.0 \cdot (30)^{1.12} \cdot 0.81 \approx 79.6 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-4" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-4-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-4-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-4"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (79.6)^{0.35} \approx 13.7 \text{ months}\]</p>
+</div>
+</details>
 <hr />
-<pre><code class="language-admonish question title=&#39;### Question 6: Large Embedded Project&#39;">
-An **Embedded** project has an estimated size of **150 KLOC**.
-
-**Cost Drivers:**
-- **Required Software Reliability (RELY)**: 1.15 (High)
-- **Product Complexity (CPLX)**: 1.30 (Very High)
-- **Programmer Capability (PCAP)**: 0.86 (High)
-
-The **EAF** is calculated as:
-
-\\[\text{EAF} = 1.15 \cdot 1.30 \cdot 0.86 \approx 1.28\\]
-
-\\(
+<div id="admonition-question-6-large-embedded-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-6-large-embedded-project-title">
+<div class="admonition-title">
+<div id="admonition-question-6-large-embedded-project-title">
+<h3 id="question-6-large-embedded-project"><a class="header" href="#question-6-large-embedded-project">Question 6: Large Embedded Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-6-large-embedded-project"></a>
+</div>
+<div>
+<p>An <strong>Embedded</strong> project has an estimated size of <strong>150 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.15 (High)</li>
+<li><strong>Product Complexity (CPLX)</strong>: 1.30 (Very High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.86 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 1.30 \cdot 0.86 \approx 1.28\]</p>
+<p>\(
 \text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
-\\)
-
-Constants for Embedded projects:
-- a = 3.6
-- b = 1.20
-</code></pre>
+\)</p>
+<p>Constants for Embedded projects:</p>
+<ul>
+<li>a = 3.6</li>
+<li>b = 1.20</li>
+</ul>
+</div>
+</div>
 <p><strong>Tasks:</strong></p>
-<pre><code class="language-admonish success collapsible=true title=&#39;Calculate the effort (in person-months).&#39;">
-**Effort (in person-months):**
-
-\\[\text{Effort} = 3.6 \cdot (150)^{1.20} \cdot 1.28 \approx 1552.7 \text{ person-months}\\]
-
-</code></pre>
-<pre><code class="language-admonish success collapsible=true title=&#39;Estimate the development time (in months).&#39;">
-**Development Time:**
-
-\\[\text{Development Time} = 2.5 \cdot (1552.7)^{0.32} \approx 33.5 \text{ months}\\]
-
-</code></pre>
-
+<details id="admonition-calculate-the-effort-in-person-months-5" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-5-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-5-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-5"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.6 \cdot (150)^{1.20} \cdot 1.28 \approx 1552.7 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-5" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-5-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-5-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-5"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (1552.7)^{0.32} \approx 33.5 \text{ months}\]</p>
+</div>
+</details>
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
