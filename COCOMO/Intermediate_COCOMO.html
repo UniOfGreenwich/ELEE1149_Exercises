@@ -1,0 +1,586 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Intermediate COCOMO - Software Engineering</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href=".././theme/pagetoc.css">
+        <link rel="stylesheet" href=".././theme/css/mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/css/code.css">
+        <link rel="stylesheet" href=".././theme/css/terminal.css">
+        <link rel="stylesheet" href=".././theme/css/output.css">
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="burgundy">Burgundy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="dracula">Dracula</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ecoFriend">EcoFriend</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="pinkrose">Pinkrose</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="space">Space</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="sustain">Sustain</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="tokyonight">Tokyonight</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Software Engineering</h1>
+
+                    <div class="right-buttons">
+                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/main/content/COCOMO/Intermediate_COCOMO.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
+                        <h1 id="intermediate-cocomo-cost-drivers-and-multipliers"><a class="header" href="#intermediate-cocomo-cost-drivers-and-multipliers">Intermediate COCOMO Cost Drivers and Multipliers</a></h1>
+<p>In Intermediate COCOMO, the <strong>Effort Adjustment Factor (EAF)</strong> is calculated based on 15 cost drivers. Each driver has a rating that corresponds to a multiplier. These cost drivers are categorized into four groups.</p>
+<h2 id="1-product-attributes"><a class="header" href="#1-product-attributes">1. Product Attributes</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Cost Driver</th><th>Very Low</th><th>Low</th><th>Nominal</th><th>High</th><th>Very High</th><th>Extra High</th></tr></thead><tbody>
+<tr><td><strong>Required Software Reliability (RELY)</strong></td><td>0.75</td><td>0.88</td><td>1.00</td><td>1.15</td><td>1.40</td><td>-</td></tr>
+<tr><td><strong>Database Size (DATA)</strong></td><td>-</td><td>0.94</td><td>1.00</td><td>1.08</td><td>1.16</td><td>-</td></tr>
+<tr><td><strong>Product Complexity (CPLX)</strong></td><td>0.70</td><td>0.85</td><td>1.00</td><td>1.15</td><td>1.30</td><td>1.65</td></tr>
+</tbody></table>
+</div>
+<h2 id="2-hardware-attributes"><a class="header" href="#2-hardware-attributes">2. Hardware Attributes</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Cost Driver</th><th>Very Low</th><th>Low</th><th>Nominal</th><th>High</th><th>Very High</th><th>Extra High</th></tr></thead><tbody>
+<tr><td><strong>Execution Time Constraint (TIME)</strong></td><td>-</td><td>-</td><td>1.00</td><td>1.11</td><td>1.30</td><td>1.66</td></tr>
+<tr><td><strong>Main Storage Constraint (STOR)</strong></td><td>-</td><td>-</td><td>1.00</td><td>1.06</td><td>1.21</td><td>1.56</td></tr>
+<tr><td><strong>Virtual Machine Volatility (VIRT)</strong></td><td>0.87</td><td>0.94</td><td>1.00</td><td>1.10</td><td>1.15</td><td>-</td></tr>
+<tr><td><strong>Turnaround Time (TURN)</strong></td><td>-</td><td>0.87</td><td>1.00</td><td>1.07</td><td>1.15</td><td>-</td></tr>
+</tbody></table>
+</div>
+<h2 id="3-personnel-attributes"><a class="header" href="#3-personnel-attributes">3. Personnel Attributes</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Cost Driver</th><th>Very Low</th><th>Low</th><th>Nominal</th><th>High</th><th>Very High</th><th>Extra High</th></tr></thead><tbody>
+<tr><td><strong>Analyst Capability (ACAP)</strong></td><td>1.46</td><td>1.19</td><td>1.00</td><td>0.86</td><td>0.71</td><td>-</td></tr>
+<tr><td><strong>Programmer Capability (PCAP)</strong></td><td>1.42</td><td>1.17</td><td>1.00</td><td>0.86</td><td>0.70</td><td>-</td></tr>
+<tr><td><strong>Application Experience (AEXP)</strong></td><td>1.29</td><td>1.13</td><td>1.00</td><td>0.91</td><td>0.82</td><td>-</td></tr>
+<tr><td><strong>Platform Experience (PEXP)</strong></td><td>1.19</td><td>1.09</td><td>1.00</td><td>0.91</td><td>0.85</td><td>-</td></tr>
+<tr><td><strong>Language and Tool Experience (LTEX)</strong></td><td>1.20</td><td>1.09</td><td>1.00</td><td>0.91</td><td>0.84</td><td>-</td></tr>
+</tbody></table>
+</div>
+<h2 id="4-project-attributes"><a class="header" href="#4-project-attributes">4. Project Attributes</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Cost Driver</th><th>Very Low</th><th>Low</th><th>Nominal</th><th>High</th><th>Very High</th><th>Extra High</th></tr></thead><tbody>
+<tr><td><strong>Use of Modern Software Practices (MODP)</strong></td><td>1.24</td><td>1.10</td><td>1.00</td><td>0.91</td><td>0.82</td><td>-</td></tr>
+<tr><td><strong>Use of Software Tools (TOOL)</strong></td><td>1.24</td><td>1.10</td><td>1.00</td><td>0.91</td><td>0.83</td><td>-</td></tr>
+<tr><td><strong>Required Development Schedule (SCED)</strong></td><td>1.23</td><td>1.08</td><td>1.00</td><td>1.04</td><td>1.10</td><td>-</td></tr>
+</tbody></table>
+</div>
+<h2 id="example-of-calculating-eaf"><a class="header" href="#example-of-calculating-eaf">Example of Calculating EAF:</a></h2>
+<p>For example, assume the following ratings for the cost drivers:</p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong> = 1.15 (High)</li>
+<li><strong>Database Size (DATA)</strong> = 1.00 (Nominal)</li>
+<li><strong>Product Complexity (CPLX)</strong> = 1.15 (High)</li>
+<li><strong>Programmer Capability (PCAP)</strong> = 0.86 (High)</li>
+<li><strong>Use of Software Tools (TOOL)</strong> = 0.91 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated by multiplying the values of these drivers:</p>
+<p>\[
+\text{EAF} = 1.15 	\cdot 1.00 	\cdot 1.15 	\cdot 0.86 	\cdot 0.91 \approx 1.01
+\]</p>
+<hr />
+<h2 id="questions"><a class="header" href="#questions">Questions</a></h2>
+<div id="admonition-question-1-small-organic-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-1-small-organic-project-title">
+<div class="admonition-title">
+<div id="admonition-question-1-small-organic-project-title">
+<h3 id="question-1-small-organic-project"><a class="header" href="#question-1-small-organic-project">Question 1: Small Organic Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-1-small-organic-project"></a>
+</div>
+<div>
+<p>You are tasked with estimating the effort for a small <strong>Organic</strong> software project with an estimated size of <strong>10 KLOC</strong> (thousand lines of code).</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.15 (High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.86 (High)</li>
+<li><strong>Use of Software Tools (TOOL)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>Effort Adjustment Factor (EAF)</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 0.86 \cdot 0.91 \approx 0.90\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b \cdot EAF
+\)</p>
+<p>Constants for Organic projects:</p>
+<ul>
+<li>a = 2.4</li>
+<li>b = 1.05</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 2.4 \cdot (10)^{1.05} \cdot 0.90 \approx 22.8 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (22.8)^{0.38} \approx 10.4 \text{ months}\]</p>
+</div>
+</details>
+<hr />
+<div id="admonition-question-2-medium-semi-detached-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-2-medium-semi-detached-project-title">
+<div class="admonition-title">
+<div id="admonition-question-2-medium-semi-detached-project-title">
+<h3 id="question-2-medium-semi-detached-project"><a class="header" href="#question-2-medium-semi-detached-project">Question 2: Medium Semi-Detached Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-2-medium-semi-detached-project"></a>
+</div>
+<div>
+<p>A medium-sized <strong>Semi-Detached</strong> project is estimated to have <strong>50 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Product Complexity (CPLX)</strong>: 1.30 (Very High)</li>
+<li><strong>Analyst Capability (ACAP)</strong>: 0.86 (High)</li>
+<li><strong>Required Development Schedule (SCED)</strong>: 1.10 (Very High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.30 \cdot 0.86 \cdot 1.10 \approx 1.23\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\)</p>
+<p>Constants for Semi-Detached projects:</p>
+<ul>
+<li>a = 3.0</li>
+<li>b = 1.12</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months-1" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-1-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-1-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-1"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.0 \cdot (50)^{1.12} \cdot 1.23 \approx 207.3 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-1" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-1-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-1-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-1"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (207.3)^{0.35} \approx 18.9 \text{ months}\]</p>
+</div>
+</details>
+<hr />
+<div id="admonition-question-3-large-embedded-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-3-large-embedded-project-title">
+<div class="admonition-title">
+<div id="admonition-question-3-large-embedded-project-title">
+<h3 id="question-3-large-embedded-project"><a class="header" href="#question-3-large-embedded-project">Question 3: Large Embedded Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-3-large-embedded-project"></a>
+</div>
+<div>
+<p>A large <strong>Embedded</strong> project is estimated at <strong>200 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Platform Volatility (PVOL)</strong>: 1.15 (Very High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.88 (High)</li>
+<li><strong>Application Experience (AEXP)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 0.88 \cdot 0.91 \approx 0.92\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\)</p>
+<p>Constants for Embedded projects:</p>
+<ul>
+<li>a = 3.6</li>
+<li>b = 1.20</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months-2" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-2-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-2-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-2"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.6 \cdot (200)^{1.20} \cdot 0.92 \approx 1412.1 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-2" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-2-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-2-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-2"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (1412.1)^{0.32} \approx 32.3 \text{ months}\]</p>
+</div>
+</details>
+<hr />
+<div id="admonition-question-4-tiny-organic-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-4-tiny-organic-project-title">
+<div class="admonition-title">
+<div id="admonition-question-4-tiny-organic-project-title">
+<h3 id="question-4-tiny-organic-project"><a class="header" href="#question-4-tiny-organic-project">Question 4: Tiny Organic Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-4-tiny-organic-project"></a>
+</div>
+<div>
+<p>A tiny <strong>Organic</strong> project is estimated at <strong>2 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.10 (High)</li>
+<li><strong>Use of Modern Software Tools (TOOL)</strong>: 0.91 (High)</li>
+<li><strong>Team Cohesion (TEAM)</strong>: 0.92 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.10 \cdot 0.91 \cdot 0.92 \approx 0.92\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\)</p>
+<p>Constants for Organic projects:</p>
+<ul>
+<li>a = 2.4</li>
+<li>b = 1.05</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months-3" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-3-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-3-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-3"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 2.4 \cdot (2)^{1.05} \cdot 0.92 \approx 4.8 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-3" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-3-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-3-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-3"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (4.8)^{0.38} \approx 6.3 \text{ months}\]</p>
+</div>
+</details>
+<hr />
+<div id="admonition-question-5-medium-semi-detached-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-5-medium-semi-detached-project-title">
+<div class="admonition-title">
+<div id="admonition-question-5-medium-semi-detached-project-title">
+<h3 id="question-5-medium-semi-detached-project"><a class="header" href="#question-5-medium-semi-detached-project">Question 5: Medium Semi-Detached Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-5-medium-semi-detached-project"></a>
+</div>
+<div>
+<p>A <strong>Semi-Detached</strong> project has an estimated size of <strong>30 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Development Schedule (SCED)</strong>: 1.04 (High)</li>
+<li><strong>Analyst Capability (ACAP)</strong>: 0.86 (High)</li>
+<li><strong>Language and Tool Experience (LTEX)</strong>: 0.91 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.04 \cdot 0.86 \cdot 0.91 \approx 0.81\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\)</p>
+<p>Constants for Semi-Detached projects:</p>
+<ul>
+<li>a = 3.0</li>
+<li>b = 1.12</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months-4" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-4-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-4-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-4"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.0 \cdot (30)^{1.12} \cdot 0.81 \approx 79.6 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-4" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-4-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-4-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-4"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (79.6)^{0.35} \approx 13.7 \text{ months}\]</p>
+</div>
+</details>
+<hr />
+<div id="admonition-question-6-large-embedded-project" class="admonition admonish-question" role="note" aria-labelledby="admonition-question-6-large-embedded-project-title">
+<div class="admonition-title">
+<div id="admonition-question-6-large-embedded-project-title">
+<h3 id="question-6-large-embedded-project"><a class="header" href="#question-6-large-embedded-project">Question 6: Large Embedded Project</a></h3>
+</div>
+<a class="admonition-anchor-link" href="#admonition-question-6-large-embedded-project"></a>
+</div>
+<div>
+<p>An <strong>Embedded</strong> project has an estimated size of <strong>150 KLOC</strong>.</p>
+<p><strong>Cost Drivers:</strong></p>
+<ul>
+<li><strong>Required Software Reliability (RELY)</strong>: 1.15 (High)</li>
+<li><strong>Product Complexity (CPLX)</strong>: 1.30 (Very High)</li>
+<li><strong>Programmer Capability (PCAP)</strong>: 0.86 (High)</li>
+</ul>
+<p>The <strong>EAF</strong> is calculated as:</p>
+<p>\[\text{EAF} = 1.15 \cdot 1.30 \cdot 0.86 \approx 1.28\]</p>
+<p>\(
+\text{Effort (person-months)} = a \cdot (KLOC)^b  \cdot EAF
+\)</p>
+<p>Constants for Embedded projects:</p>
+<ul>
+<li>a = 3.6</li>
+<li>b = 1.20</li>
+</ul>
+</div>
+</div>
+<p><strong>Tasks:</strong></p>
+<details id="admonition-calculate-the-effort-in-person-months-5" class="admonition admonish-success" role="note" aria-labelledby="admonition-calculate-the-effort-in-person-months-5-title">
+<summary class="admonition-title">
+<div id="admonition-calculate-the-effort-in-person-months-5-title">
+<p>Calculate the effort (in person-months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-calculate-the-effort-in-person-months-5"></a>
+</summary>
+<div>
+<p><strong>Effort (in person-months):</strong></p>
+<p>\[\text{Effort} = 3.6 \cdot (150)^{1.20} \cdot 1.28 \approx 1552.7 \text{ person-months}\]</p>
+</div>
+</details>
+<details id="admonition-estimate-the-development-time-in-months-5" class="admonition admonish-success" role="note" aria-labelledby="admonition-estimate-the-development-time-in-months-5-title">
+<summary class="admonition-title">
+<div id="admonition-estimate-the-development-time-in-months-5-title">
+<p>Estimate the development time (in months).</p>
+</div>
+<a class="admonition-anchor-link" href="#admonition-estimate-the-development-time-in-months-5"></a>
+</summary>
+<div>
+<p><strong>Development Time:</strong></p>
+<p>\[\text{Development Time} = 2.5 \cdot (1552.7)^{0.32} \approx 33.5 \text{ months}\]</p>
+</div>
+</details>
+                    </main>
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../COCOMO/COCOMO.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../COCOMO/Detailed_COCOMO.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../COCOMO/COCOMO.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../COCOMO/Detailed_COCOMO.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="../theme/pagetoc.js"></script>
+
+
+    </div>
+    </body>
+</html>
