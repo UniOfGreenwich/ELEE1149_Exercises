@@ -1,7 +1,37 @@
-# Module_mdBook_template
+# University of Greenwich - MD_Book_Template
 
-This repo is to be used as the [template](https://github.com/organizations/uniofgreenwich/repositories/new) for creating module documentation. It uses `mdbook`, which is powered by [Rust](https://rust-lang.org/), therefore some examples and external links point to the [mdbook](https://github.com/rust-lang/mdBook) documentation.
+> [!NOTE]
+> - Version: 1.0.0
+> - View the deployment for a rendered documentation:
+>   - [https://uniofgreenwich.github.io/MD_Book_Template](https://uniofgreenwich.github.io/MD_Book_Template)
 
-You can view the mdbook in it's deployed state [here](https://uniofgreenwich.github.io/Module_mdBook_template/). Once opened, use the contents page on the left-hand side to navigate through the documentation.
+This template can used to create a place for all exercises or source of knowledge for your module, which is deployed as a webpage with the following address:
 
-Main thing to note is that all your content should be placed inside the the subdirectory `content`, and using subdirectories beneath that to organise your work. 
+`https://uniofgreenwich.github.io/Name_of_your_Repository`, best practice is to prefix with the module code.
+
+Examples: 
+    
+- [https://uniofgreenwich.github.io/ELEE1147_Exercises/](https://uniofgreenwich.github.io/ELEE1147_Exercises/)
+
+- [https://uniofgreenwich.github.io/ELEE1119_Exercises/](https://uniofgreenwich.github.io/ELEE1119_Exercises/)
+
+## Tech Stack
+
+This template includes the following tech stack:
+
+- [Github Source mdbook](https://github.com/rust-lang/mdBook)
+  - [mdbook Documenation](https://rust-lang.github.io/mdBook/)
+
+- [GitHub Source mdbook-admonish](https://github.com/tommilligan/mdbook-admonish)
+  - [mdbook-admonish Documentation](https://tommilligan.github.io/mdbook-admonish/)
+  
+- [GitHub mdbook-pagtoc](https://github.com/slowsage/mdbook-pagetoc)
+  - [mdbook-pagtoc Documentation](https://jorel.dev/mdBook-pagetoc/)
+
+
+## Contribution
+
+
+## Author
+
+- [Seb Blair \<CompEng0001\>](https://github.com/CompEng0001)

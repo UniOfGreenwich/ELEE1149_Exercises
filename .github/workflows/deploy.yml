@@ -14,19 +14,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install segno
+
       - name: Setup mdBook
         uses: jontze/action-mdbook@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          # Optional Plugins have to be enabled
           use-toc: true
           use-admonish: true
+
       - name: Show mdbook version
         run: mdbook --version
       - name: Show toc version
         run: mdbook-toc --version
       - name: Show admonish version
         run: mdbook-admonish --version
+
+      - name: Generate QR code
+        env:
+          REPO_NAME: ${{ github.repository }}
+        run: python .github/qrgen.py
 
       - run: mdbook build
 
