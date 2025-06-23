@@ -1,15 +1,67 @@
 [book]
-authors = ["Seb Blair"]
-title = "Software Engineering"
+authors = ["Seb Blair (CompEng0001)"]
 language = "en"
 multilingual = false
 src = "content"
+title = "Software Engineering"
+
+[output.html]
+highlightjs = false  # disable if not already
+mathjax-support = true
+git-repository-url = "https://github.com/uniofgreenwich/ELEE1149_Exercises"
+edit-url-template = "https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/main/{path}"
+additional-css = [
+    "./theme/pagetoc.css", 
+    "./theme/css/mdbook-admonish.css",
+    "./theme/css/code.css",
+    "./theme/css/terminal.css",
+    "./theme/css/output.css",
+    "./theme/css/mdbook-admonish.css"
+
+]
+additional-js  = ["./theme/pagetoc.js", "./theme/highlightjs-line-numbers.js"]
+
+[output.html.print]
+enable = false
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.html.fold]
+enable = true
+
+[preprocessor.embedify]
+custom-templates-folder = "theme/assets/templates"
+before = ["links"]
+scroll-to-top.enable = true
+footer.enable = true
+footer.message = "Copyright © 2025 • Created with ❤️ by [CompEng0001](https://github.com/CompEng0001)"
+
+announcement-banner.enable = false
+announcement-banner.id = "0.2.15"
+announcement-banner.message = "*Version **0.2.15** now has relased, check it out [here](https://github.com/MR-Addict/mdbook-embedify/releases/tag/0.2.15).*"
+
+giscus.enable = false
+giscus.repo = "MR-Addict/mdbook-embedify"
+giscus.repo-id = "R_kgDOLCxX0Q"
+giscus.category = "General"
+giscus.category-id = "DIC_kwDOLCxX0c4CdGx-"
+giscus.reactions-enabled = "1"
+giscus.theme = "book"
+giscus.lang = "en"
+giscus.loading = "lazy"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
-assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
-after = ["links"]
-renderer.test.render_mode = "strip"
+assets_version = "3.1.0" # do not edit: managed by `mdbook-admonish install`
+before = ["embedify"]
+renderer.test.render_mode = "html"
 
 [preprocessor.admonish.directive.custom.code]
 icon = "./theme/code-square.svg"
@@ -25,23 +77,9 @@ aliases = ["cli","cmd"]
 icon = "./theme/output.svg"
 color = "#72879C"
 
+[preprocessor.quiz]
+before = ["admonish"]
+fullscreen = false
+show-bug-reporter = true
+
 [preprocessor.pagetoc]
-[output.html]
-mathjax-support = true
-git-repository-url = "https://github.com/uniofgreenwich/ELEE1149_Exercises"
-edit-url-template = "https://github.com/uniofgreenwich/ELEE1149_Exercises/edit/main/{path}"
-input-404 = "404/404.md"
-additional-css = ["./theme/pagetoc.css", "./theme/css/mdbook-admonish.css", "./theme/css/code.css","./theme/css/terminal.css","./theme/css/output.css"]
-additional-js  = ["theme/pagetoc.js"]
-
-[output.html.print]
-enable = false
-
-[output.html.search]
-limit-results = 20
-use-boolean-and = true
-boost-title = 2
-boost-hierarchy = 2
-boost-paragraph = 1
-expand = true
-heading-split-level = 2
