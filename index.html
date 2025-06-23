@@ -33,6 +33,7 @@
         <link rel="stylesheet" href="./theme/css/code.css">
         <link rel="stylesheet" href="./theme/css/terminal.css">
         <link rel="stylesheet" href="./theme/css/output.css">
+        <link rel="stylesheet" href="./theme/css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -220,7 +221,7 @@ Clicking a highlighted word or pressing the <code>Esc</code> key will remove the
 <p>Currently the mdBook is approximately 60+ pages, and the environmental impact per page ~10.2L water, 2g CO\(_2\) and 2g wood. Therefore, ~600L water, 120g CO\(_2\) and 120g wood would be needed to produce a paper copy of this mdBook.</p>
 <p>The environmental effects of paper production include deforestation, the use of enormous amounts of energy and water as well as air pollution and waste problems. Paper accounts for around 26% of total waste at landfills</p>
 <p>Therefore, please print only if this is really necessary.</p>
-
+<style>.scroll-to-top { font-size: 2.5rem; width: 3.2rem; height: 3.2rem; display: none; align-items: center; justify-content: center; position: fixed; padding: 0.75rem; bottom: 4rem; right: calc(1.25rem + 90px + var(--page-padding)); z-index: 999; cursor: pointer; border: none; color: var(--bg); background: var(--fg); border-radius: 50%; } .scroll-to-top.hidden { display: none; } .scroll-to-top i { transform: translateY(-2px); } @media (min-width: 1080px) { .scroll-to-top { display: flex; } }</style><button type="button" aria-label="scroll-to-top" class="scroll-to-top hidden" onclick="scrollToTop()"> <i class="fa fa-angle-up"></i></button><script>const scrollToTop = () => window.scroll({ top: 0, behavior: "smooth" }); window.addEventListener("scroll", () => { const button = document.querySelector(".scroll-to-top"); button.classList.toggle("hidden", window.scrollY <200); });</script><style>footer { text-align: center; text-wrap: balance; margin-top: 5rem; display: flex; flex-direction: column; justify-content: center; align-items: center; } footer p { margin: 0; }</style><footer><p>Copyright © 2025 • Created with ❤️ by <a href="https://github.com/CompEng0001">CompEng0001</a></p></footer>
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
@@ -260,7 +261,8 @@ Clicking a highlighted word or pressing the <code>Esc</code> key will remove the
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="theme/pagetoc.js"></script>
+        <script src="./theme/pagetoc.js"></script>
+        <script src="./theme/highlightjs-line-numbers.js"></script>
 
 
     </div>

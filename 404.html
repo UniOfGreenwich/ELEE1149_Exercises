@@ -34,6 +34,7 @@
         <link rel="stylesheet" href="./theme/css/code.css">
         <link rel="stylesheet" href="./theme/css/terminal.css">
         <link rel="stylesheet" href="./theme/css/output.css">
+        <link rel="stylesheet" href="./theme/css/mdbook-admonish.css">
 
         <!-- MathJax -->
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -166,63 +167,8 @@
 
                 <div id="content" class="content">
                     <main><div class="sidetoc"><nav class="pagetoc"></nav></div>
-                        <!-- Quote Container -->
-<!-- Quote to be Displayed Here -->
-<h1 align=center>  404 </h1>
-<p>
-Either you have the wrong url, or the page is not available yet...
-<p>
-<hr />
-<hr />
-<p></p>
-<div>
-Enjoy this random quote...
-<p class="quote" id="quote" style="text-indent: 40px; font-weight: bold;" ></p>
-</p>
-<p class="author" id="author"></p>
-</div>
-<hr />
-<hr />
-<!--LINK CUSTOM JS FILE-->
-<script>
-const text=document.getElementById("quote");
-const author=document.getElementById("author");
-const tweetButton=document.getElementById("tweet");
-
-const getNewQuote = async () =>
-{
-    //api for quotes
-    var url="https://type.fit/api/quotes";    
-
-    // fetch the data from api
-    const response=await fetch(url);
-    console.log(typeof response);
-    //convert response to json and store it in quotes array
-    const allQuotes = await response.json();
-
-    // Generates a random number between 0 and the length of the quotes array
-    const indx = Math.floor(Math.random()*allQuotes.length);
-
-    //Store the quote present at the randomly generated index
-    const quote=allQuotes[indx].text;
-
-    //Store the author of the respective quote
-    const auth=allQuotes[indx].author;
-
-    if(auth==null)
-    {
-        author = "Anonymous";
-    }
-
-    //function to dynamically display the quote and the author
-    text.innerHTML=quote;
-    author.innerHTML="~ "+auth;
-}
-
-window.onload = function() {
-    getNewQuote();};
-    
-</script>
+                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
+<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
 
                     </main>
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -257,7 +203,8 @@ window.onload = function() {
         <script src="book.js"></script>
 
         <!-- Custom JS scripts -->
-        <script src="theme/pagetoc.js"></script>
+        <script src="./theme/pagetoc.js"></script>
+        <script src="./theme/highlightjs-line-numbers.js"></script>
 
 
     </div>
